@@ -1,0 +1,20 @@
+.select {
+  // background: var(--sub-alt-color);
+  background: var(--bg-color);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  color: var(--text-color);
+  // padding-left: 8px;
+  // padding-right: 20px;
+}
+
+.reverced {
+  background: var(--bg-color);
+}
+
+.selectDropdown {
+  background: var(--bg-color);
+  border-color: var(--sub-alt-color);
+  color: var(--sub-color);
+}

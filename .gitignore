@@ -1,0 +1,10 @@
+
+.idea
+package-lock.json
+node_modules
+/build
+
+.loki/report.html
+.loki/report.json
+.env
+environments/.env.development

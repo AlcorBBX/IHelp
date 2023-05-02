@@ -1,0 +1,132 @@
+.button {
+  border-radius: 15px;
+  // padding: 6px 15px;
+  padding: 0.5em;
+  text-align: center;
+  cursor: pointer;
+  line-height: 1.25em;
+  font-size: 1em;
+  font-family: inherit;
+  appearance: none;
+  -webkit-user-select: none;
+  user-select: none;
+  // transition: ;
+  color: var(--text-color);
+  background: var(--sub-alt-color);
+  border: none;
+
+  &:hover {
+    color: var(--bg-color);
+    background: var(--text-color);
+  }
+  &:active {
+    color: var(--bg-color);
+    background: var(--sub-color);
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.15em var(--text-color);
+  }
+}
+
+.active {
+  background: var(--main-color);
+  color: var(--bg-color);
+}
+
+.disabled {
+  cursor: default;
+  opacity: 0.33;
+  pointer-events: none;
+}
+
+.inverted {
+  background: var(--bg-color);
+}
+
+.clear,
+.clearInverted {
+  color: #383e42;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.clearInverted {
+  color: var(--inverted-primary-color);
+}
+
+.outline {
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  background: none;
+}
+
+.outlinedDanger {
+  box-shadow: 0 0 0 0.15em var(--error-color);
+
+  &:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+  }
+  &:active {
+    background: var(--sub-color);
+  }
+  &:focus {
+    box-shadow: 0 0 0 0.15em var(--error-color);
+  }
+}
+
+.background {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
+}
+
+.backgroundInverted {
+  background-color: var(--inverted-bg-color);
+  color: var(--bg-color);
+  border: none;
+
+  &:hover {
+    background-color: var(--inverted-primary-color);
+  }
+
+  &:active {
+    background-color: var(--primary-color);
+  }
+}
+
+.square {
+  padding: 0;
+}
+
+.square.size_m {
+  width: var(--font-line-m);
+  height: var(--font-line-m);
+}
+
+.square.size_l {
+  width: var(--font-line-l);
+  height: var(--font-line-l);
+}
+
+.square.size_xl {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
+}
+
+.size_m {
+  font: var(--font-m);
+}
+
+.size_l {
+  font: var(--font-l);
+}
+
+.size_xl {
+  font: var(--font-xl);
+}
+
+.disabled {
+  opacity: 0.5;
+}

@@ -1,0 +1,21 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": true,
+  "tabWidth": 2,
+  "max-len": ["error", 110, 2],
+  "importOrder": [
+    "^(react/(.*)$)|^(react$)",
+    "<THIRD_PARTY_MODULES>",
+    "^app/(.*)$",
+    "^entities/(.*)$",
+    "^features/(.*)$",
+    "^pages/(.*)$",
+    "^shared/(.*)$",
+    "^widgets/(.*)$",
+    "^[./]",
+    "^[../]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}

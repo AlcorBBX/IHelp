@@ -1,0 +1,40 @@
+@import './reset';
+@import './variables/global';
+// @import './themes/normal';
+@import './themes/dark';
+@import './themes/chaos-theory.scss';
+@import './themes/stealth.scss';
+@import './themes/dark-note.scss';
+@import './themes/8008.scss';
+@import './themes/dino.scss';
+
+::-moz-selection {
+  background-color: #30a62a;
+  color: #fff;
+}
+::selection {
+  background-color: #30a62a;
+  color: #fff;
+}
+
+body {
+  scrollbar-color: var(--sub-color);
+  font: var(--font-m);
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app {
+  min-height: 100vh;
+  background: var(--bg-color);
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
+}

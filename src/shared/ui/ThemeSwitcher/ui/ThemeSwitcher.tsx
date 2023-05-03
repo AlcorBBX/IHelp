@@ -42,7 +42,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
           <option key={value[0]}>{value[1]}</option>
         ))}
       </select>
-      <Select options={optionsNormalize(themesEntries)} />
+      {/* <Select options={optionsNormalize(themesEntries)} /> */}
     </>
   );
 });

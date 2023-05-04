@@ -1,4 +1,4 @@
-export const SettingsPage = () => {
+const SettingsPage = () => {
   return (
     <div>
       <a href="#account">account</a>
@@ -7,3 +7,5 @@ export const SettingsPage = () => {
     </div>
   );
 };
+
+export default SettingsPage;

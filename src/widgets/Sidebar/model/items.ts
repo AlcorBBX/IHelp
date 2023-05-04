@@ -27,4 +27,9 @@ export const SidebarItemList: SidebarItemType[] = [
     // Icon: ProfileIcon,
     text: 'Profile',
   },
+  {
+    path: RoutePath.settings,
+    // Icon: ProfileIcon,
+    text: 'Settings',
+  },
 ];

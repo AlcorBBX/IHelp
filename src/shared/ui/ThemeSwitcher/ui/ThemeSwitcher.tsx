@@ -23,18 +23,6 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     changeTheme(result);
   };
 
-  const optionsNormalize = (options: [string, string][]) => {
-    // @ts-ignore
-    const result: OptionItem[] = [];
-
-    if (!options) return;
-
-    options.map((option) => {
-      result.push({ text: option[0] });
-    });
-
-    return result;
-  };
   return (
     <>
       <select value={pickTheme} onChange={(e) => changeThemeHandler(e)}>
@@ -43,6 +31,19 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
         ))}
       </select>
       {/* <Select options={optionsNormalize(themesEntries)} /> */}
+      {/* <div>
+        {themesEntries.map((value) => (
+          <div>
+            <span />
+            <div>{value[1]}</div>
+            <div>
+              <span />
+              <span />
+              <span />
+            </div>
+          </div>
+        ))}
+      </div> */}
     </>
   );
 });

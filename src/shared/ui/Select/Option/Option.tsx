@@ -1,27 +1,53 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { MouseEventHandler, useEffect, useRef } from 'react';
 
-import cls from './Option.module.scss';
+import Styles from './Option.module.scss';
 
-export type OptionValue = string | number | object;
+export type Option = {
+  title: string;
+  value: string;
+};
+export type OptionProps = {
+  option: Option;
+  onClick: (value: Option['value']) => void;
+};
+export const OptionEl = (props: OptionProps) => {
+  const {
+    option: { value, title },
+    onClick,
+  } = props;
+  const optionRef = useRef<HTMLLIElement>(null);
 
-export interface OptionItem<T extends OptionValue> {
-  id?: number;
-  value?: T;
-  text: string;
-}
+  const handleClick =
+    (clickedValue: Option['value']): MouseEventHandler<HTMLLIElement> =>
+    () => {
+      onClick(clickedValue);
+    };
 
-interface OptionProps<T extends OptionValue> {
-  className?: string;
-  optionItem: OptionItem<T>;
-}
+  useEffect(() => {
+    const option = optionRef.current;
+    if (!option) return;
+    const handleEnterKeyDown = (event: KeyboardEvent) => {
+      if (document.activeElement === option && event.key === 'Enter') {
+        onClick(value);
+      }
+    };
 
-export const Option = <T extends OptionValue>({
-  className,
-  optionItem,
-}: OptionProps<T>) => {
+    option.addEventListener('keydown', handleEnterKeyDown);
+    return () => {
+      option.removeEventListener('keydown', handleEnterKeyDown);
+    };
+  }, [value, onClick]);
+
   return (
-    <li className={classNames(cls.option, {}, [className])}>
-      {optionItem.text}
+    <li
+      className={Styles.option}
+      value={value}
+      onClick={handleClick(value)}
+      tabIndex={0}
+      data-testid={`select-option-${value}`}
+      ref={optionRef}
+    >
+      {title}
     </li>
   );
 };

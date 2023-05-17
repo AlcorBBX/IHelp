@@ -1,6 +1,5 @@
 @import './reset';
 @import './variables/global';
-// @import './themes/normal';
 @import './themes/dark';
 @import './themes/chaos-theory.scss';
 @import './themes/stealth.scss';
@@ -9,12 +8,12 @@
 @import './themes/dino.scss';
 
 ::-moz-selection {
-  background-color: #30a62a;
-  color: #fff;
+  background-color: var(--main-color);
+  color: var(--sub-alt-color);
 }
 ::selection {
-  background-color: #30a62a;
-  color: #fff;
+  background-color: var(--main-color);
+  color: var(--sub-alt-color);
 }
 
 body {

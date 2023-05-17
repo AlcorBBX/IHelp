@@ -4,7 +4,7 @@ import {
   LOCAL_STORAGE_THEME_KEY,
   Theme,
   ThemeContext, // themes,
-} from '../lib/ThemeContext';
+} from 'shared/lib/theme/ThemeContext';
 
 const defaultTheme =
   (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.STEALTH;

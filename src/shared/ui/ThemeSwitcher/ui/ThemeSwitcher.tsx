@@ -1,8 +1,7 @@
 import { memo, useState } from 'react';
 
-import { useTheme } from 'app/providers/ThemeProvider';
-import { theme } from 'app/providers/ThemeProvider/lib/ThemeContext';
-
+import { theme } from 'shared/lib/theme/ThemeContext';
+import { useTheme } from 'shared/lib/theme/useTheme';
 import Select from 'shared/ui/Select/Select';
 
 interface ThemeSwitcherProps {
@@ -14,7 +13,6 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const [pickTheme, setPickTheme] = useState('');
 
   const changeThemeHandler = (value: string) => {
-    const l = value;
     setPickTheme(value);
     changeTheme(value);
   };

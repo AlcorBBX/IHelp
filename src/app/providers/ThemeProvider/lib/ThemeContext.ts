@@ -17,6 +17,14 @@ export const themes = {
   dark: 'dark',
 };
 
+export const theme = [
+  { title: 'stealth', value: 'stealth' },
+  { title: 'chaos theory', value: 'chaos_theory' },
+  { title: 'dark note', value: 'dark_note' },
+  { title: 'dino', value: 'dino' },
+  { title: '8008', value: '8008' },
+  { title: 'dark', value: 'dark' },
+];
 export const themesEntries = Object.entries(themes);
 // export type ThemesType = ReturnType<typeof themes>
 

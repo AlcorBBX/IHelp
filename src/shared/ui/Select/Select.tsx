@@ -1,103 +1,158 @@
-import { useState } from 'react';
-import type { ReactNode, SelectHTMLAttributes } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
+import type { MouseEventHandler } from 'react';
 
-import { classNames } from 'shared/lib/classNames/classNames';
+//@ts-ignore
+// import { ReactComponent as ArrowDown } from 'shared/assets/arrow-down.svg';
+import Styles from './Select.module.scss';
 
-import { Option, OptionItem, OptionValue } from './Option/Option';
-import cls from './Select.module.scss';
+// TODO distructure
+type Option = {
+  title: string;
+  value: string;
+};
+type OptionProps = {
+  option: Option;
+  onClick: (value: Option['value']) => void;
+};
+const OptionEl = (props: OptionProps) => {
+  const {
+    option: { value, title },
+    onClick,
+  } = props;
+  const optionRef = useRef<HTMLLIElement>(null);
 
-type HtmlSelectProps = Omit<
-  SelectHTMLAttributes<HTMLSelectElement>,
-  'onChange'
->;
+  const handleClick =
+    (clickedValue: Option['value']): MouseEventHandler<HTMLLIElement> =>
+    () => {
+      onClick(clickedValue);
+    };
 
-type RawValue = string | number;
+  useEffect(() => {
+    const option = optionRef.current;
+    if (!option) return;
+    const handleEnterKeyDown = (event: KeyboardEvent) => {
+      if (document.activeElement === option && event.key === 'Enter') {
+        onClick(value);
+      }
+    };
 
-// interface LabeledValue {
-//   key?: string;
-//   value: RawValue;
-//   label: ReactNode;
-// }
+    option.addEventListener('keydown', handleEnterKeyDown);
+    return () => {
+      option.removeEventListener('keydown', handleEnterKeyDown);
+    };
+  }, [value, onClick]);
 
-// type SelectValue =
-//   | RawValue
-//   | RawValue[]
-//   | LabeledValue
-//   | LabeledValue[]
-//   | undefined;
+  return (
+    <li
+      className={Styles.option}
+      value={value}
+      onClick={handleClick(value)}
+      tabIndex={0}
+      data-testid={`select-option-${value}`}
+      ref={optionRef}
+    >
+      {title}
+    </li>
+  );
+};
 
-// interface OptionsType {
-//   key?: string;
-//   value: RawValue;
-//   label: RawValue;
-// }
+type SelectProps = {
+  selected: Option | null;
+  options: Option[];
+  placeholder?: string;
+  mode?: 'rows' | 'cells';
+  status?: 'default' | 'invalid';
+  onChange?: (selected: Option['value']) => void;
+  onClose?: () => void;
+};
 
-interface SelectProps<T extends OptionValue> extends HtmlSelectProps {
-  defaultValue?: RawValue;
-  className?: string;
-  disabled?: boolean;
-  options: OptionItem<T>[];
-}
+const Select = (props: SelectProps) => {
+  const {
+    mode = 'rows',
+    options,
+    placeholder,
+    status = 'default',
+    selected,
+    onChange,
+    onClose,
+  } = props;
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const placeholderRef = useRef<HTMLDivElement>(null);
 
-// interface SelectProp<
-//   ValueType = any,
-//   OptionType extends BaseOptionType | DefaultOptionType = DefaultOptionType,
-// > extends Omit<
-//     InternalSelectProps<ValueType, OptionType>,
-//     | 'inputIcon'
-//     | 'mode'
-//     | 'getInputElement'
-//     | 'getRawInputElement'
-//     | 'backfill'
-//     | 'pacement'
-//   > {
-//   placement?: SelectCommonPlacement;
-//   mode?: 'multiple' | 'tags';
-//   status?: InputStatus;
-// }
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const { target } = event;
+      if (target instanceof Node && !rootRef.current?.contains(target)) {
+        isOpen && onClose?.();
+        setIsOpen(false);
+      }
+    };
 
-export const Select = <T extends OptionValue>({
-  className,
-  disabled,
-  options,
-  ...other
-}: SelectProps<T>) => {
-  const [value, setValue] = useState('');
-  const [isFocused, setIsFocused] = useState<boolean>(true);
+    window.addEventListener('click', handleClick);
 
-  // const changeHandler = (value: T) => {
-  //   setValue(value);
-  // };
+    return () => {
+      window.removeEventListener('click', handleClick);
+    };
+  }, [onClose]);
 
-  const changeFocus = () => {
-    setIsFocused(() => !isFocused);
+  useEffect(() => {
+    const placeholderEl = placeholderRef.current;
+    if (!placeholderEl) return;
+
+    const handleEnterKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Enter') {
+        setIsOpen((prev) => !prev);
+      }
+    };
+    placeholderEl.addEventListener('keydown', handleEnterKeyDown);
+
+    return () => {
+      placeholderEl.removeEventListener('keydown', handleEnterKeyDown);
+    };
+  }, []);
+
+  const handleOptionClick = (value: Option['value']) => {
+    setIsOpen(false);
+    onChange?.(value);
   };
-
-  const mods = {
-    [cls.disabled]: disabled,
-  };
-
-  const dropDownElements = (options: OptionItem<T>[]) => {
-    if (!options) return null;
-
-    return options.map((option) => {
-      <Option optionItem={option} />;
-    });
+  const handlePlaceHolderClick: MouseEventHandler<HTMLDivElement> = () => {
+    setIsOpen((prev) => !prev);
   };
 
   return (
-    <div className={classNames(cls.select, mods, [className])}>
-      <span onClick={() => changeFocus()}>{value ? value : 'select'}</span>
-      {
-        // isFocused &&
-        options.map((option) => {
-          <ul>
-            <Option optionItem={option} />
-          </ul>;
-        })
-        // <Option optionItem={dropDownElements(options)}/>
-        // <ul className={cls.optionsList}>{dropDownElements(options)}</ul>
-      }
+    <div
+      className={Styles.selectWrapper}
+      ref={rootRef}
+      data-is-active={isOpen}
+      data-mode={mode}
+      data-testid="selectWrapper"
+    >
+      <div className={Styles.arrow}>{/* <ArrowDown /> */}</div>
+      <div
+        className={Styles.placeholder}
+        data-status={status}
+        data-selected={!!selected?.value}
+        onClick={handlePlaceHolderClick}
+        role="button"
+        tabIndex={0}
+        ref={placeholderRef}
+      >
+        {selected?.title || placeholder}
+      </div>
+      {isOpen && (
+        <ul className={Styles.select} data-testid="selectDropdown">
+          {options.map((option) => (
+            <OptionEl
+              key={option.value}
+              option={option}
+              onClick={handleOptionClick}
+            />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
+
+export default Select;

@@ -1,10 +1,29 @@
 import { useEffect, useRef, useState } from 'react';
 import type { MouseEventHandler } from 'react';
 
+// import Arrow from 'shared/assets/arrow-down.svg';
+import { classNames } from 'shared/lib/classNames/classNames';
+
 import { Option, OptionEl } from './Option/Option';
-import Styles from './Select.module.scss';
+import cls from './Select.module.scss';
+
+// TODO move some logic in hooks
+
+/* export enum SelectTheme {
+  // CLEAR = 'clear',
+  // OUTLINE = 'outline',
+  // OUTLINED_DANGER = 'outlinedDanger',
+  // CLEAR_INVERTED = 'clearInverted',
+  // BACKGROUND = 'background',
+  // BACKGROUND_INVERTED = 'backgroundInverted',
+  INVERTED = 'inverted',
+} */
+
+export type Theme = 'primary' | 'inverted';
 
 type SelectProps = {
+  theme?: Theme;
+  className?: string;
   selected: Option | null;
   options: Option[];
   placeholder?: string;
@@ -14,16 +33,17 @@ type SelectProps = {
   onClose?: () => void;
 };
 
-const Select = (props: SelectProps) => {
-  const {
-    mode = 'rows',
-    options,
-    placeholder,
-    status = 'default',
-    selected,
-    onChange,
-    onClose,
-  } = props;
+const Select = ({
+  theme,
+  className,
+  mode = 'rows',
+  options,
+  placeholder,
+  status = 'default',
+  selected,
+  onChange,
+  onClose,
+}: SelectProps) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const rootRef = useRef<HTMLDivElement>(null);
   const placeholderRef = useRef<HTMLDivElement>(null);
@@ -68,17 +88,23 @@ const Select = (props: SelectProps) => {
     setIsOpen((prev) => !prev);
   };
 
+  const mods = {
+    [cls[theme]]: true,
+    // [cls.disabled]: disabled,
+    // [cls.active]: active,
+  };
+
   return (
     <div
-      className={Styles.selectWrapper}
+      className={classNames(cls.selectWrapper, mods, [className, cls[theme]])}
       ref={rootRef}
       data-is-active={isOpen}
       data-mode={mode}
       data-testid="selectWrapper"
     >
-      <div className={Styles.arrow}>{/* <ArrowDown /> */}</div>
+      <div className={cls.arrow}>{/* <Arrow /> */}</div>
       <div
-        className={Styles.placeholder}
+        className={cls.placeholder}
         data-status={status}
         data-selected={!!selected?.value}
         onClick={handlePlaceHolderClick}
@@ -89,9 +115,10 @@ const Select = (props: SelectProps) => {
         {selected?.title || placeholder}
       </div>
       {isOpen && (
-        <ul className={Styles.select} data-testid="selectDropdown">
+        <ul className={cls.select} data-testid="selectDropdown">
           {options.map((option) => (
             <OptionEl
+              theme={theme}
               key={option.value}
               option={option}
               onClick={handleOptionClick}

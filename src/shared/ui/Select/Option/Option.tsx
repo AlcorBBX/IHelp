@@ -1,17 +1,24 @@
 import { MouseEventHandler, useEffect, useRef } from 'react';
 
-import Styles from './Option.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
+
+import { Theme } from '../Select';
+import cls from './Option.module.scss';
 
 export type Option = {
   title: string;
   value: string;
 };
 export type OptionProps = {
+  className?: string;
+  theme?: Theme;
   option: Option;
   onClick: (value: Option['value']) => void;
 };
 export const OptionEl = (props: OptionProps) => {
   const {
+    className,
+    theme,
     option: { value, title },
     onClick,
   } = props;
@@ -40,7 +47,8 @@ export const OptionEl = (props: OptionProps) => {
 
   return (
     <li
-      className={Styles.option}
+      className={classNames(cls.option, {}, [className, cls[theme]])}
+      // className={cls.option}
       value={value}
       onClick={handleClick(value)}
       tabIndex={0}

@@ -1,4 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
 
 import cls from './ErrorPage.module.scss';
 
@@ -12,8 +13,10 @@ export const ErrorPage = ({ className }: ErrorPageProps) => {
   };
   return (
     <div className={classNames(cls.errorpage, {}, [className])}>
-      <p>Произошла ошибка</p>
-      <button onClick={reloadPage}>Обновить страницу</button>
+      <p>An error occurred</p>
+      <Button theme="outlinedDanger" onClick={reloadPage}>
+        Reload page
+      </Button>
     </div>
   );
 };

@@ -1,14 +1,14 @@
 import { memo, useCallback, useState } from 'react';
 
 import { useTranslate } from '@ayub-begimkulov/i18n';
-import { useDispatch, useSelector } from 'react-redux';
+
+/* import { useDispatch, useSelector } from 'react-redux';
 
 import { getUserAuthData, userActions } from 'entities/User';
 
-import { LoginModal } from 'features/AuthByUserName';
-
+import { LoginModal } from 'features/AuthByUserName'; */
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 
 import { HeaderActions } from './HeaderActions/HeaderActions';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
@@ -37,7 +37,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   // if (authData) {
   //   return (
   //     <div className={classNames(cls.navbar, {}, [className])}>
-  //       <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onLogout}>
+  //       <Button theme='clearInverted' onClick={onLogout}>
   //         Выйти
   //       </Button>
   //     </div>
@@ -47,7 +47,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     <div className={classNames(cls.navbar, {}, [className])}>
       <HeaderLogo />
       <HeaderActions />
-      <Button theme={ButtonTheme.CLEAR_INVERTED} onClick={onShowModal}>
+      <Button theme="clearInverted" onClick={onShowModal}>
         {t('Log in')}
       </Button>
       {/* {isAuthModal && (

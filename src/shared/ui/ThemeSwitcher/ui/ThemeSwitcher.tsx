@@ -20,6 +20,7 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   return (
     <>
       <Select
+        theme="inverted"
         mode="rows"
         options={theme}
         selected={selectedTheme || null}

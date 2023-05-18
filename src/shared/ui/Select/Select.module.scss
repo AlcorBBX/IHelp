@@ -1,26 +1,26 @@
-/* .normal { */
-/*   background: var(--sub-alt-color); */
-/*   color: var(--text-color); */
+/* .normal {
+  background: var(--sub-alt-color);
+  color: var(--text-color);
 
-/*   .dropdown { */
-/*     background: var(--bg-color); */
-/*     border-color: var(--sub-alt-color); */
-/*     border-radius: 0.5rem; */
-/*     color: var(--sub-color); */
+  .dropdown {
+    background: var(--bg-color);
+    border-color: var(--sub-alt-color);
+    border-radius: 0.5rem;
+    color: var(--sub-color);
 
-/*     .li:hover { */
-/*       background: var(--text-color); */
-/*       color: var(--bg-color); */
-/*     } */
-/*   } */
-/* } */
-/* .inverted { */
-/*   background: var(--bg-color); */
-/*   color: var(); */
-/* } */
-.select {
-  // background: var(--sub-alt-color);
+    .li:hover {
+      background: var(--text-color);
+      color: var(--bg-color);
+    }
+  }
+}
+.inverted {
   background: var(--bg-color);
+  color: var();
+} */
+.select {
+  background: var(--sub-alt-color);
+  /* background: var(--bg-color); */
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -29,8 +29,10 @@
   // padding-right: 20px;
 }
 
-.reverced {
-  background: var(--bg-color);
+.inverted {
+  .placeholder {
+    background: var(--bg-color);
+  }
 }
 
 .selectDropdown {
@@ -67,10 +69,10 @@
   font-size: 14px;
   line-height: 20px;
   color: var(--text-color);
-  background: var(--bg-color);
+  background: var(--sub-alt-color);
   box-sizing: border-box;
   width: 100%;
-  border-radius: 2px;
+  border-radius: 10px;
 }
 
 .placeholder[data-status='default'] {
@@ -110,7 +112,7 @@
   z-index: 10;
   background-color: var(--bg-color);
 }
-.option {
+/* .option {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -124,6 +126,11 @@
   line-height: 20px;
   background-color: var(--bg-color);
   color: var(--text-color);
+
+  &:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+  }
 }
 
 .option[aria-selected='true'] {
@@ -131,7 +138,7 @@
 }
 .option:hover {
   background-color: var(--bg-color);
-}
+} */
 
 .selectWrapper[data-mode='cells'] .select {
   grid-template-columns: repeat(3, 1fr);

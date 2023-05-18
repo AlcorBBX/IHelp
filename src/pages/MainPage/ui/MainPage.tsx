@@ -32,6 +32,7 @@ const MainPage = memo(() => {
       {t('Main Page')}
 
       <Select
+        theme="primary"
         mode="rows"
         options={options}
         selected={selectedMonth || null}

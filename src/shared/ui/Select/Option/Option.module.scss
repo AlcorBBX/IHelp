@@ -1,6 +1,22 @@
 .option {
   // position: absolute;
-  background: var(--bg-color);
+  /* background: var(--bg-color);
   border-color: var(--sub-alt-color);
+  color: var(--sub-color); */
+  background: var(--sub-alt-color);
+
+  /* background: var(--bg-color); */
+
+  border-color: var(--sub-alt-color);
+  border-radius: 0.5rem;
   color: var(--sub-color);
+
+  &:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+  }
+}
+
+.inverted {
+  background: var(--bg-color);
 }

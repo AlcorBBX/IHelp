@@ -1,3 +1,3 @@
-import { ProfilePageAsync } from './ui/ProfilePage.async';
+import { ProfilePageLazy } from './ui/ProfilePage.async';
 
-export { ProfilePageAsync as ProfilePage };
+export { ProfilePageLazy as ProfilePage };

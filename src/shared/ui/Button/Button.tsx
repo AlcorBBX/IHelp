@@ -4,15 +4,26 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Button.module.scss';
 
-export enum ButtonTheme {
-  CLEAR = 'clear',
-  OUTLINE = 'outline',
-  OUTLINED_DANGER = 'outlinedDanger',
-  CLEAR_INVERTED = 'clearInverted',
-  BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'backgroundInverted',
-  INVERTED = 'inverted',
-}
+// export enum ButtonTheme {
+//   CLEAR = 'clear',
+//   OUTLINE = 'outline',
+//   OUTLINED_DANGER = 'outlinedDanger',
+//   CLEAR_INVERTED = 'clearInverted',
+//   BACKGROUND = 'background',
+//   BACKGROUND_INVERTED = 'backgroundInverted',
+//   INVERTED = 'inverted',
+// }
+
+type Theme =
+  | 'inverted'
+  | 'background'
+  | 'backgroundInverted'
+  | 'outlinedDanger'
+  | 'outline'
+  | 'clear'
+  | 'clearInverted'
+  | 'disabled'
+  | 'active';
 
 export enum ButtonSize {
   M = 'size_m',
@@ -22,7 +33,7 @@ export enum ButtonSize {
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
-  theme?: ButtonTheme;
+  theme?: Theme;
   square?: boolean;
   size?: ButtonSize;
   disabled?: boolean;

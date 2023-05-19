@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { I18NProvider, useI18N } from '@ayub-begimkulov/i18n';
+import { I18NProvider } from '@ayub-begimkulov/i18n';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 

@@ -1,5 +1,5 @@
 // import { useState } from 'react';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button/Button';
 import { Input, InputTheme } from 'shared/ui/Input/Input';
 
 import cls from './LoginForm.module.scss';
@@ -49,15 +49,11 @@ export const Form = ({
         onClick={closeEyeClick}
       />
       <div className={cls.actionsWrapper}>
-        <Button
-          theme={ButtonTheme.INVERTED}
-          className={cls.loginBtn}
-          disabled={isLoading}
-        >
+        <Button theme="inverted" className={cls.loginBtn} disabled={isLoading}>
           Sig in
         </Button>
         <Button
-          theme={ButtonTheme.INVERTED}
+          theme="inverted"
           onClick={() => handleClick(name, password)}
           className={cls.loginBtn}
           disabled={isLoading}

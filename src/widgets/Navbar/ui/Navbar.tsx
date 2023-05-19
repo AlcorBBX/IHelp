@@ -2,11 +2,9 @@ import { memo, useCallback, useState } from 'react';
 
 import { useTranslate } from '@ayub-begimkulov/i18n';
 
-/* import { useDispatch, useSelector } from 'react-redux';
-
-import { getUserAuthData, userActions } from 'entities/User';
-
-import { LoginModal } from 'features/AuthByUserName'; */
+// import { useDispatch, useSelector } from 'react-redux';
+// import { getUserAuthData, userActions } from 'entities/User';
+// import { LoginModal } from 'features/AuthByUserName';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 
@@ -30,14 +28,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
-  // const onLogout = () => {
-  //   dispatch(userActions.logout());
-  // };
+  const onLogout = () => {
+    // dispatch(userActions.logout());
+  };
 
   // if (authData) {
   //   return (
   //     <div className={classNames(cls.navbar, {}, [className])}>
-  //       <Button theme='clearInverted' onClick={onLogout}>
+  //       <Button theme="clearInverted" onClick={onLogout}>
   //         Выйти
   //       </Button>
   //     </div>
@@ -50,9 +48,9 @@ export const Navbar = memo(({ className }: NavbarProps) => {
       <Button theme="clearInverted" onClick={onShowModal}>
         {t('Log in')}
       </Button>
-      {/* {isAuthModal && (
-        <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
-      )} */}
+      {/* {isAuthModal && ( */}
+      {/*   <LoginModal isOpen={isAuthModal} onClose={onCloseModal} /> */}
+      {/* )} */}
     </div>
   );
 });

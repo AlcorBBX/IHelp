@@ -3,14 +3,18 @@ import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
 import { AxiosInstance } from 'axios';
 import { NavigateOptions, To } from 'react-router-dom';
 
-import { CounterSchema } from 'entities/Counter';
+// import { CounterSchema } from 'entities/Counter';
 import { ProfileSchema } from 'entities/Profile';
-import { UserSchema } from 'entities/User';
+import { UserSchema } from 'entities/User/model/types/user';
 
-import { LoginSchema } from 'features/AuthByUserName';
+import { LoginSchema } from 'features/AuthByUserName/model/types/loginSchema';
+
+// import { UserSchema } from 'entities/User';
+
+// import { LoginSchema } from 'features/AuthByUserName';
 
 export interface StateSchema {
-  counter: CounterSchema;
+  // counter: CounterSchema;
   user: UserSchema;
 
   // Асинхронные редьюсеры

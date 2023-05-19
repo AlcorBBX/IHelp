@@ -1,23 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import type { MouseEventHandler } from 'react';
 
-// import Arrow from 'shared/assets/arrow-down.svg';
+import Arrow from 'shared/assets/arrow-down.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Option, OptionEl } from './Option/Option';
 import cls from './Select.module.scss';
 
 // TODO move some logic in hooks
-
-/* export enum SelectTheme {
-  // CLEAR = 'clear',
-  // OUTLINE = 'outline',
-  // OUTLINED_DANGER = 'outlinedDanger',
-  // CLEAR_INVERTED = 'clearInverted',
-  // BACKGROUND = 'background',
-  // BACKGROUND_INVERTED = 'backgroundInverted',
-  INVERTED = 'inverted',
-} */
 
 export type Theme = 'primary' | 'inverted';
 
@@ -102,7 +92,10 @@ const Select = ({
       data-mode={mode}
       data-testid="selectWrapper"
     >
-      <div className={cls.arrow}>{/* <Arrow /> */}</div>
+      <div className={cls.arrow}>
+        {' '}
+        <Arrow />
+      </div>
       <div
         className={cls.placeholder}
         data-status={status}

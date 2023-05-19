@@ -6,7 +6,7 @@ import {
 } from '@reduxjs/toolkit';
 import { NavigateOptions, To, useNavigate } from 'react-router-dom';
 
-import { counterReducer } from 'entities/Counter';
+// import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 
 import { $api } from 'shared/api/api';
@@ -21,7 +21,7 @@ export function createReduxStore(
 ) {
   const rootReducers: ReducersMapObject<StateSchema> = {
     ...asyncReducers,
-    counter: counterReducer,
+    // counter: counterReducer,
     user: userReducer,
   };
 

@@ -17,11 +17,13 @@ export default defineConfig({
     }),
   ],
   resolve: {
-    alias: [
-      {
-        find: '~antd',
-        replacement: 'antd',
-      },
-    ],
+    alias: {
+      app: 'src/app',
+      entities: 'src/entities',
+      features: 'src/features',
+      pages: 'src/pages',
+      shared: 'src/shared',
+      widgets: 'src/widgets',
+    },
   },
 });

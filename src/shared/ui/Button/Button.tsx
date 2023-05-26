@@ -4,16 +4,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Button.module.scss';
 
-// export enum ButtonTheme {
-//   CLEAR = 'clear',
-//   OUTLINE = 'outline',
-//   OUTLINED_DANGER = 'outlinedDanger',
-//   CLEAR_INVERTED = 'clearInverted',
-//   BACKGROUND = 'background',
-//   BACKGROUND_INVERTED = 'backgroundInverted',
-//   INVERTED = 'inverted',
-// }
-
 type Theme =
   | 'inverted'
   | 'background'

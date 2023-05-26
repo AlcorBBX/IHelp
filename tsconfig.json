@@ -7,26 +7,30 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "moduleResolution": "node",
-    "baseUrl": "./src/",
-   
+
+    "baseUrl": "src",
+    "paths": {
+      "app/*": ["app/*"],
+      "entities/*": ["entities/*"],
+      "features/*": ["features/*"],
+      "pages/*": ["pages/*"],
+      "shared/*": ["shared/*"],
+      "widgets/*": ["widgets/*"]
+    },
+
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "lib": ["es5", "es6", "dom"],
 
-  "strict": false,
-
+    "strict": false
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
-    },
+      "module": "CommonJS"
+    }
   },
-  "include": [
-    "./config/jest/setupTests.ts",
-    "./src/**/*.ts",
-    "./src/**/*.tsx",
-  ],
-  "paths": {
-    "*": ["./src/*"]
-  },
+  "include": ["./config/jest/setupTests.ts", "./src/**/*.ts", "./src/**/*.tsx"]
+  // "paths": {
+  //   "*": ["./src/*"]
+  // }
 }

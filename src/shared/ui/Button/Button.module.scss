@@ -23,9 +23,9 @@
     color: var(--bg-color);
     background: var(--sub-color);
   }
-  &:focus {
-    box-shadow: 0 0 0 0.15em var(--text-color);
-  }
+  /* &:focus { */
+  /*   box-shadow: 0 0 0 0.15em var(--text-color); */
+  /* } */
 }
 
 .active {
@@ -71,9 +71,9 @@
   &:active {
     background: var(--sub-color);
   }
-  &:focus {
-    box-shadow: 0 0 0 0.15em var(--error-color);
-  }
+  /* &:focus { */
+  /*   box-shadow: 0 0 0 0.15em var(--error-color); */
+  /* } */
 }
 
 .background {

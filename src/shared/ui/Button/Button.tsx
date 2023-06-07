@@ -11,9 +11,7 @@ type Theme =
   | 'outlinedDanger'
   | 'outline'
   | 'clear'
-  | 'clearInverted'
-  | 'disabled'
-  | 'active';
+  | 'clearInverted';
 
 export enum ButtonSize {
   M = 'size_m',

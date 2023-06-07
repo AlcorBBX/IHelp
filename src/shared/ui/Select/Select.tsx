@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { MouseEventHandler } from 'react';
 
-// import Arrow from 'shared/assets/arrow-down.svg';
+import Arrow from 'shared/assets/arrow-down.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import { Option, OptionEl } from './Option/Option';
@@ -93,7 +93,9 @@ const Select = ({
       data-mode={mode}
       data-testid="selectWrapper"
     >
-      <div className={cls.arrow}> {/* <Arrow /> */}</div>
+      <div className={cls.arrow}>
+        <img src={Arrow} alt="\/" />
+      </div>
       <div
         className={cls.placeholder}
         data-status={status}

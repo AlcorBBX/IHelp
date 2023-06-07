@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useLayoutEffect, useState } from 'react';
 
 import { theme } from 'shared/lib/theme/ThemeContext';
 import { useTheme } from 'shared/lib/theme/useTheme';
@@ -8,7 +8,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({}: ThemeSwitcherProps) => {
   const { changeTheme } = useTheme();
   const [pickTheme, setPickTheme] = useState('');
 
@@ -16,7 +16,17 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
     setPickTheme(value);
     changeTheme(value);
   };
+
+  const localStorageTheme = localStorage.getItem('theme');
+
+  useLayoutEffect(() => {
+    if (!localStorageTheme) return;
+
+    setPickTheme(() => localStorageTheme);
+  }, [localStorageTheme]);
+
   const selectedTheme = theme.find((item) => item.value === pickTheme);
+
   return (
     <>
       <Select

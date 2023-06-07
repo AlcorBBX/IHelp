@@ -9,12 +9,14 @@ export type Option = {
   title: string;
   value: string;
 };
+
 export type OptionProps = {
   className?: string;
   theme?: Theme;
   option: Option;
   onClick: (value: Option['value']) => void;
 };
+
 export const OptionEl = (props: OptionProps) => {
   const {
     className,
@@ -48,7 +50,6 @@ export const OptionEl = (props: OptionProps) => {
   return (
     <li
       className={classNames(cls.option, {}, [className, cls[theme]])}
-      // className={cls.option}
       value={value}
       onClick={handleClick(value)}
       tabIndex={0}

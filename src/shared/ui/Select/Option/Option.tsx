@@ -42,11 +42,13 @@ export const OptionEl = (props: OptionProps) => {
     };
 
     option.addEventListener('keydown', handleEnterKeyDown);
+
     return () => {
       option.removeEventListener('keydown', handleEnterKeyDown);
     };
   }, [value, onClick]);
 
+  // FIX eslint error: li cant have onClick, tabIndex. Add button
   return (
     <li
       className={classNames(cls.option, {}, [className, cls[theme]])}

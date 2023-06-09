@@ -21,24 +21,13 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": [
-    "react",
-    "@typescript-eslint",
-    "react-hooks"
-  ],
+  "plugins": ["react", "@typescript-eslint", "react-hooks"],
   "rules": {
-    "indent": [
-      1,
-      2
-    ],
+    "indent": [1, 2],
     "react/jsx-filename-extension": [
       2,
       {
-        "extensions": [
-          ".js",
-          ".jsx",
-          ".tsx"
-        ]
+        "extensions": [".js", ".jsx", ".tsx"]
       }
     ],
     "react/button-has-type": "off",
@@ -74,6 +63,7 @@
     "operator-linebreak": "off",
     "arrow-body-style": "off",
     "array-callback-return": "off",
+    "consistent-return": "warn",
     "max-len": [
       "error",
       {

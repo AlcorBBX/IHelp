@@ -8,7 +8,7 @@ interface ThemeSwitcherProps {
   className?: string;
 }
 
-export const ThemeSwitcher = memo(({}: ThemeSwitcherProps) => {
+export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { changeTheme } = useTheme();
   const [pickTheme, setPickTheme] = useState('');
 

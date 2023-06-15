@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC, memo } from 'react';
+import { type ButtonHTMLAttributes, type FC, memo } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -13,14 +13,17 @@ type Theme =
   | 'clear'
   | 'clearInverted';
 
-export enum ButtonSize {
-  M = 'size_m',
-  L = 'size_l',
-  XL = 'size_xl',
-}
+type ButtonSize = 'm' | 'l' | 'xl';
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+type HtmlButtonProps = Omit<
+  ButtonHTMLAttributes<HTMLButtonElement>,
+  'onClick' | 'className' | 'disabled'
+>;
+
+interface ButtonProps extends HtmlButtonProps {
   className?: string;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  loading?: boolean;
   theme?: Theme;
   square?: boolean;
   size?: ButtonSize;
@@ -31,12 +34,14 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
   const {
     className,
+    onClick,
+    loading,
     children,
     theme,
     square,
     disabled,
     active,
-    size = ButtonSize.M,
+    size = 'm',
     ...otherProps
   } = props;
 
@@ -52,6 +57,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     <button
       className={classNames(cls.button, mods, [className, cls[theme]])}
       disabled={disabled}
+      onClick={onClick}
       {...otherProps}
     >
       {children}

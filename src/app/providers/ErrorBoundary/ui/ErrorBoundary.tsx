@@ -2,18 +2,18 @@ import React, { ErrorInfo, ReactNode, Suspense } from 'react';
 
 import { ErrorPage } from 'widgets/ErrorPage';
 
-interface ErrorBounfaryProps {
-  children: ReactNode | any; // todo fix any type
+interface ErrorBoundaryProps {
+  children: ReactNode | any; // FIX any type
 }
-interface ErrorBoundartState {
+interface ErrorBoundaryState {
   hasError: boolean;
 }
 
 export class ErrorBoundary extends React.Component<
-  ErrorBounfaryProps,
-  ErrorBoundartState
+  ErrorBoundaryProps,
+  ErrorBoundaryState
 > {
-  constructor(props: ErrorBounfaryProps) {
+  constructor(props: ErrorBoundaryProps) {
     super(props);
     this.state = { hasError: false };
   }

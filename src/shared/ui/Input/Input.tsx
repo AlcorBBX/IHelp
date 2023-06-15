@@ -17,18 +17,18 @@ type HtmlInputProps = Omit<
   'value' | 'onChange'
 >;
 
-export enum InputTheme {
-  CLEAR = 'clear',
-  OUTLINE = 'outline',
-  OUTLINED_DANGER = 'outlinedDanger',
-  CLEAR_INVERTED = 'clearInverted',
-  BACKGROUND = 'background',
-  BACKGROUND_INVERTED = 'backgroundInverted',
-  INVERTED = 'inverted',
-}
+type InputTheme =
+  | 'clear'
+  | 'outline'
+  | 'outlinedDanger'
+  | 'clearInverted'
+  | 'background'
+  | 'backgroundInverted'
+  | 'inverted';
 
 interface InputProps extends HtmlInputProps {
   className?: string;
+  loading?: boolean;
   value?: string;
   onChange?: (value: string) => void;
   type?: string;
@@ -41,6 +41,7 @@ interface InputProps extends HtmlInputProps {
 export const Input: FC<InputProps> = memo(
   ({
     className,
+    loading,
     value,
     onChange,
     type = 'text',

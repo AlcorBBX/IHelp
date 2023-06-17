@@ -16,7 +16,7 @@ const langs = [
 export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
   const { lang, setLang } = useI18N();
 
-  let l = { title: lang as string, value: lang as string };
+  const l = { title: lang as string, value: lang as string };
 
   return (
     <>

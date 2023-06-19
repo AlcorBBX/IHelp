@@ -12,10 +12,10 @@
     background-color: #0001;
     border-radius: 8px;
   }
+}
 
-  :global([data-theme='dark']) & {
-    filter: invert(1);
-  }
+.invert {
+  filter: invert(1);
 }
 
 .icon {

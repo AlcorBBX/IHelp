@@ -13,14 +13,14 @@ type Theme =
   | 'clear'
   | 'clearInverted';
 
-type ButtonSize = 'm' | 'l' | 'xl';
+type ButtonSize = 'xs' | 's' | 'm' | 'l' | 'xl';
 
 type HtmlButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,
   'onClick' | 'className' | 'disabled'
 >;
 
-interface ButtonProps extends HtmlButtonProps {
+export interface ButtonProps extends HtmlButtonProps {
   className?: string;
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
   loading?: boolean;
@@ -37,16 +37,16 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     onClick,
     loading,
     children,
-    theme,
-    square,
-    disabled,
-    active,
+    theme = 'outline',
+    square = false,
+    disabled = false,
+    active = false,
     size = 'm',
     ...otherProps
   } = props;
 
   const mods = {
-    [cls[theme]]: true,
+    // [cls[theme]]: true,
     [cls.square]: square,
     [cls[size]]: true,
     [cls.disabled]: disabled,

@@ -28,12 +28,13 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       ])}
     >
       <Button
-        active
-        className={cls.collapseBtn}
         data-testid="sidebar-toggle"
-        size="l"
-        square
+        className={cls.collapseBtn}
         onClick={onToggle}
+        // theme="outlinedDanger"
+        active
+        square
+        size="l"
       >
         {collapsed ? '>' : '<'}
       </Button>

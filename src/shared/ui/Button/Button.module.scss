@@ -29,8 +29,9 @@
 }
 
 .active {
-  background: var(--main-color);
-  color: var(--bg-color);
+  background: var(--main-color) !important;
+  /* background: var(--sub-color); */
+  color: var(--bg-color) !important;
 }
 
 .disabled {
@@ -113,6 +114,14 @@
 .square.xl {
   width: var(--font-line-xl);
   height: var(--font-line-xl);
+}
+
+.s {
+  font: var(--font-s);
+}
+
+.xs {
+  font: var(--font-xs);
 }
 
 .m {

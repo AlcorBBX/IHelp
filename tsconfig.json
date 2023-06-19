@@ -5,7 +5,7 @@
     "module": "ESNext",
     "target": "es5",
     "jsx": "react-jsx",
-    "allowJs": true,
+    "allowJs": false,
     "moduleResolution": "node",
 
     "baseUrl": "src",
@@ -22,7 +22,7 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["es5", "es6", "dom"],
 
-    "strict": false
+    "strict": true 
   },
   "ts-node": {
     "compilerOptions": {

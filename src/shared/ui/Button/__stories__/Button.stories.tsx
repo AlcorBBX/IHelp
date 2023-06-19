@@ -56,12 +56,13 @@ const IconTemplate: StoryFn<ButtonProps> = (args) => (
     <span style={{ margin: '16px' }} />
     <Button {...args}>
       Right
-      <Icon type="magnifier" />
+      <Icon theme="invert" type="magnifier" />
     </Button>
     <span style={{ margin: '16px' }} />
     <Button {...args}>
       <Icon type="magnifier" />
       Both
+      <Icon type="bell" />
     </Button>
     <span style={{ margin: '16px' }} />
   </React.Fragment>

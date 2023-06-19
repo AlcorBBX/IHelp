@@ -7,6 +7,20 @@
 @import './themes/8008.scss';
 @import './themes/dino.scss';
 
+:root {
+  /* stealth theme */
+  --bg-color: #1f1f1f;
+  --main-color: #f2c17b;
+  --caret-color: #e3dce0;
+  --sub-color: #768f95;
+  --sub-alt-color: #141414;
+  --text-color: #d2dff4;
+  --error-color: #ff000;
+  --error-extra-color: #588498;
+  --colorful-error-color: #ff000;
+  --colorful-error-extra-color: #ff000;
+}
+
 ::-moz-selection {
   background-color: var(--main-color);
   color: var(--sub-alt-color);

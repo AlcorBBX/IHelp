@@ -37,7 +37,7 @@ export const Button: FC<ButtonProps> = memo((props: ButtonProps) => {
     onClick,
     loading,
     children,
-    theme = 'outline',
+    theme = 'background',
     square = false,
     disabled = false,
     active = false,

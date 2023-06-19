@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import type { Meta, StoryFn } from '@storybook/react';
 
 import 'shared/styles/index.scss';
@@ -11,36 +13,31 @@ export default {
 } as Meta;
 
 const DefaultTemplate: StoryFn<ButtonProps> = (args) => (
-  <Button style={buttonStyle} {...args}>
+  <Button theme="background" {...args}>
     Button
   </Button>
 );
 export const Default = DefaultTemplate.bind({});
 
-const buttonStyle = {
-  backgroundColor: '#121212',
-  color: '#383e42',
-};
-
 const SizeTemplate: StoryFn<ButtonProps> = (args) => (
   <div>
-    <Button style={buttonStyle} {...args} size="xs">
+    <Button {...args} size="xs">
       Size xs
     </Button>
     <span style={{ margin: '16px' }} />
-    <Button {...args} size="s" style={buttonStyle}>
+    <Button {...args} size="s">
       Size s
     </Button>
     <span style={{ margin: '16px' }} />
-    <Button {...args} size="m" style={buttonStyle}>
+    <Button {...args} size="m">
       Size m
     </Button>
     <span style={{ margin: '16px' }} />
-    <Button {...args} size="l" style={buttonStyle}>
+    <Button {...args} size="l">
       Size l
     </Button>
     <span style={{ margin: '16px' }} />
-    <Button {...args} size="xl" style={buttonStyle}>
+    <Button {...args} size="xl">
       Size xl
     </Button>
   </div>
@@ -88,20 +85,15 @@ export const Size = SizeTemplate.bind({});
 // );
 // export const Icon = IconTemplate.bind({});
 
-// export const Selected: StoryFn<ButtonProps> = (args) => {
-//   const [selected, setSelected] = React.useState(true);
+export const Selected: StoryFn<ButtonProps> = (args) => {
+  const [selected, setSelected] = useState(true);
 
-//   return (
-//     <Button
-//       {...args}
-//       // view="normal"
-//       selected={selected}
-//       onClick={() => setSelected(!selected)}
-//     >
-//       {`Button is ${selected ? 'on' : 'off'}`}
-//     </Button>
-//   );
-// };
+  return (
+    <Button {...args} active={selected} onClick={() => setSelected(!selected)}>
+      {`Button is ${selected ? 'on' : 'off'}`}
+    </Button>
+  );
+};
 
 // export const Link: StoryFn<ButtonProps> = (args) => {
 //   return (

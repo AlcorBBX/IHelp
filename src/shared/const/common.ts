@@ -11,3 +11,5 @@ export enum Country {
   'Kazakhstan' = 'Kazakhstan',
   'Armenia' = 'Armenia',
 }
+
+export const ANIMATION_TIME = 300;

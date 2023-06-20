@@ -40,23 +40,25 @@ export const WithButton = ButtonTemplate.bind({});
 const PositionsTemplate: StoryFn<TooltipProps> = (args) => (
   <React.Fragment>
     <div>
-      <Tooltip text="hi!">
+      <Tooltip type="bottom" text="hi!">
         {(props) => <Button {...props}>bottom</Button>}
       </Tooltip>
     </div>
 
     <div style={{ display: 'flex' }}>
-      <Tooltip text="hi!">
+      <Tooltip type="right" text="hi!">
         {(props) => <Button {...props}>rigth</Button>}
       </Tooltip>
 
-      <Tooltip text="hi!">
+      <Tooltip type="left" text="hi!">
         {(props) => <Button {...props}>left</Button>}
       </Tooltip>
     </div>
 
     <div>
-      <Tooltip text="hi!">{(props) => <Button {...props}>top</Button>}</Tooltip>
+      <Tooltip type="top" text="hi!">
+        {(props) => <Button {...props}>top</Button>}
+      </Tooltip>
     </div>
   </React.Fragment>
 );

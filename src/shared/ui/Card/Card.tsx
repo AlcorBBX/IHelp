@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { type MouseEvent, type ReactNode, forwardRef } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -13,10 +13,10 @@ type CardView = SelectionCardView | ContainerCardView;
 type CardSize = 'm' | 'l';
 
 interface CardProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   /** Card click handler. Available for type: 'selection', 'action' */
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
+  onClick?: (event: MouseEvent<HTMLDivElement>) => void;
   /** Disabled card. Available for type: 'selection', 'action' */
   disabled?: boolean;
   /** Selected card. Available for type: 'selection' */
@@ -27,7 +27,7 @@ interface CardProps {
   view?: CardView;
   /** Card's base color. Available for type: 'container' */
   theme?: CardTheme;
-  /** Card's size affects on available properties*/
+  /** Card's size affects on available properties */
   size?: CardSize;
 }
 
@@ -54,7 +54,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>(
         ref={ref}
         className={classNames(cls.button, mods, [className, cls[theme]])}
         onClick={isClickable ? onClick : undefined}
-      ></div>
+      />
     );
   },
 );

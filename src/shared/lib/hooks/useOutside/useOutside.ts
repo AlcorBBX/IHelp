@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useLayoutEffect, useRef, useState } from 'react';
 
 export const useOutside = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null);
@@ -12,14 +12,15 @@ export const useOutside = () => {
   };
 
   useLayoutEffect(() => {
-    document.addEventListener("click", handleClickOutside, true);
+    document.addEventListener('click', handleClickOutside, true);
     return () => {
-      document.removeEventListener("click", handleClickOutside, true);
+      document.removeEventListener('click', handleClickOutside, true);
     };
   }, [anchorEl]);
 
   useLayoutEffect(() => {
     const ModalEl = ref.current;
+    // eslint-disable-next-line
     if (!anchorEl || !ModalEl) return;
   }, [anchorEl]);
 

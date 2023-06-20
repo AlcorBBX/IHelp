@@ -64,6 +64,7 @@
     "arrow-body-style": "off",
     "array-callback-return": "off",
     "consistent-return": "warn",
+    "linebreak-style": "off",
     "max-len": [
       "error",
       {

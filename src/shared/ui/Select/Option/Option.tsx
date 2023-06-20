@@ -1,8 +1,9 @@
-import { MouseEventHandler, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Button } from 'shared/ui/Button/Button';
 
-import { Theme } from '../Select';
+import { type Theme } from '../Select';
 import cls from './Option.module.scss';
 
 export type Option = {
@@ -24,13 +25,11 @@ export const OptionEl = (props: OptionProps) => {
     option: { value, title },
     onClick,
   } = props;
-  const optionRef = useRef<HTMLLIElement>(null);
+  const optionRef = useRef<HTMLButtonElement>(null);
 
-  const handleClick =
-    (clickedValue: Option['value']): MouseEventHandler<HTMLLIElement> =>
-    () => {
-      onClick(clickedValue);
-    };
+  const handleClick = (clickedValue: Option['value']) => () => {
+    onClick(clickedValue);
+  };
 
   useEffect(() => {
     const option = optionRef.current;
@@ -48,9 +47,8 @@ export const OptionEl = (props: OptionProps) => {
     };
   }, [value, onClick]);
 
-  // FIX eslint error: li cant have onClick, tabIndex. Add button
   return (
-    <li
+    <Button
       className={classNames(cls.option, {}, [className, cls[theme]])}
       value={value}
       onClick={handleClick(value)}
@@ -59,6 +57,6 @@ export const OptionEl = (props: OptionProps) => {
       ref={optionRef}
     >
       {title}
-    </li>
+    </Button>
   );
 };

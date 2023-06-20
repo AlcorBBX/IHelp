@@ -28,15 +28,13 @@ export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const selectedTheme = theme.find((item) => item.value === pickTheme);
 
   return (
-    <>
-      <Select
-        theme="inverted"
-        mode="rows"
-        options={theme}
-        selected={selectedTheme || null}
-        onChange={changeThemeHandler}
-        placeholder="chose theme"
-      />
-    </>
+    <Select
+      theme="inverted"
+      mode="rows"
+      options={theme}
+      selected={selectedTheme || null}
+      onChange={changeThemeHandler}
+      placeholder="chose theme"
+    />
   );
 });

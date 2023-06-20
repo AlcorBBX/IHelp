@@ -19,15 +19,13 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
   const l = { title: lang as string, value: lang as string };
 
   return (
-    <>
-      <Select
-        theme="inverted"
-        mode="rows"
-        options={langs}
-        selected={l || null}
-        onChange={setLang}
-        placeholder="chose lang"
-      />
-    </>
+    <Select
+      theme="inverted"
+      mode="rows"
+      options={langs}
+      selected={l || null}
+      onChange={setLang}
+      placeholder="chose lang"
+    />
   );
 });

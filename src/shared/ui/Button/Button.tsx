@@ -1,10 +1,4 @@
-import {
-  type ButtonHTMLAttributes,
-  type FC,
-  type MouseEvent,
-  forwardRef,
-  memo,
-} from 'react';
+import { type ButtonHTMLAttributes, type MouseEvent, forwardRef } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 

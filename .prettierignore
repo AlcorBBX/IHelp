@@ -3,3 +3,8 @@ node_modules
 build
 coverage
 ./dist
+/.git
+/.husky
+/.loki
+/.storybook
+/storybook-static

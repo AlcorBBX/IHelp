@@ -3,8 +3,10 @@
 /.husky
 /.loki
 /config
+/.storybook
 /storybook-static
 /scripts
 /extractedTranslations
 /node_modules
 *.stories.tsx
+*.test.tsx

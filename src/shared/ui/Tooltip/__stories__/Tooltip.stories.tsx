@@ -14,7 +14,7 @@ export default {
 } as Meta;
 
 const DefaultTemplate: StoryFn<TooltipProps> = (args) => (
-  <Tooltip text="hi!">
+  <Tooltip {...args} text="hi!">
     {(props) => (
       <div style={{ paddingTop: '100px', paddingLeft: '50px' }}>
         <p {...props} style={{ width: 'max-content' }}>
@@ -27,7 +27,7 @@ const DefaultTemplate: StoryFn<TooltipProps> = (args) => (
 export const Default = DefaultTemplate.bind({});
 
 const ButtonTemplate: StoryFn<TooltipProps> = (args) => (
-  <Tooltip text="hi!">
+  <Tooltip {...args} text="hi!">
     {(props) => (
       <div style={{ paddingTop: '100px', paddingLeft: '50px' }}>
         <Button {...props}>tooltip</Button>
@@ -40,23 +40,23 @@ export const WithButton = ButtonTemplate.bind({});
 const PositionsTemplate: StoryFn<TooltipProps> = (args) => (
   <React.Fragment>
     <div>
-      <Tooltip type="bottom" text="hi!">
+      <Tooltip {...args} type="bottom" text="hi!">
         {(props) => <Button {...props}>bottom</Button>}
       </Tooltip>
     </div>
 
     <div style={{ display: 'flex' }}>
-      <Tooltip type="right" text="hi!">
+      <Tooltip {...args} type="right" text="hi!">
         {(props) => <Button {...props}>rigth</Button>}
       </Tooltip>
 
-      <Tooltip type="left" text="hi!">
+      <Tooltip {...args} type="left" text="hi!">
         {(props) => <Button {...props}>left</Button>}
       </Tooltip>
     </div>
 
     <div>
-      <Tooltip type="top" text="hi!">
+      <Tooltip {...args} type="top" text="hi!">
         {(props) => <Button {...props}>top</Button>}
       </Tooltip>
     </div>

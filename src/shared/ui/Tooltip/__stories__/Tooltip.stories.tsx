@@ -5,8 +5,8 @@ import type { Meta, StoryFn } from '@storybook/react';
 import 'shared/styles/index.scss';
 import { Button } from 'shared/ui/Button/Button';
 
-// import { Icon } from 'shared/ui/Icon/Icon';
-import { Tooltip, type TooltipProps } from '../Tooltip';
+import { Tooltip } from '../Tooltip';
+import type { TooltipProps } from '../Tooltip.type';
 
 export default {
   title: 'Components/Tooltip',

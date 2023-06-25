@@ -3,25 +3,13 @@ import { useEffect, useRef } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button/Button';
 
-import { type Theme } from '../Select';
 import cls from './Option.module.scss';
-
-export type Option = {
-  title: string;
-  value: string;
-};
-
-export type OptionProps = {
-  className?: string;
-  theme?: Theme;
-  option: Option;
-  onClick: (value: Option['value']) => void;
-};
+import type { Option, OptionProps } from './Option.type';
 
 export const OptionEl = (props: OptionProps) => {
   const {
     className,
-    theme,
+    theme = 'primary',
     option: { value, title },
     onClick,
   } = props;

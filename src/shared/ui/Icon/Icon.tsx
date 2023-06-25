@@ -1,28 +1,9 @@
-import React from 'react';
-
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Icon.module.scss';
+import { IconProps } from './Icon.type';
 
-type Theme = 'invert' | 'primary';
-
-export type IconType =
-  | 'arrow-down'
-  | 'bell'
-  | 'magnifier'
-  | 'like'
-  | 'dislike'
-  | 'exit'
-  | 'profile';
-
-export type Props = {
-  className?: string;
-  theme?: Theme;
-  onClick?: (event: React.MouseEvent<HTMLDivElement>) => void;
-  type: IconType;
-};
-
-export const Icon = (props: Props) => {
+export const Icon = (props: IconProps) => {
   const { theme = 'primary', className, onClick, type } = props;
   const mods = {
     [cls[theme]]: true,

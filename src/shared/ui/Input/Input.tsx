@@ -1,7 +1,6 @@
 import {
-  ChangeEvent,
-  FC,
-  InputHTMLAttributes,
+  type ChangeEvent,
+  type FC,
   memo,
   useEffect,
   useRef,
@@ -11,32 +10,7 @@ import {
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
-
-type HtmlInputProps = Omit<
-  InputHTMLAttributes<HTMLInputElement>,
-  'value' | 'onChange'
->;
-
-type InputTheme =
-  | 'clear'
-  | 'outline'
-  | 'outlinedDanger'
-  | 'clearInverted'
-  | 'background'
-  | 'backgroundInverted'
-  | 'inverted';
-
-interface InputProps extends HtmlInputProps {
-  className?: string;
-  loading?: boolean;
-  value?: string;
-  onChange?: (value: string) => void;
-  type?: string;
-  placeholder?: string;
-  autoFocus?: boolean;
-  label?: string;
-  theme?: InputTheme;
-}
+import { InputProps } from './Input.type';
 
 export const Input: FC<InputProps> = memo(
   ({
@@ -48,7 +22,7 @@ export const Input: FC<InputProps> = memo(
     placeholder,
     autoFocus,
     label,
-    theme,
+    theme = 'background',
     ...otherProps
   }: InputProps) => {
     const [isFocused, setIsFocused] = useState(false);
@@ -57,6 +31,7 @@ export const Input: FC<InputProps> = memo(
     const ref = useRef<HTMLInputElement>(null);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
+      if (!value) return;
       if (value?.length > e?.target?.value?.length) {
         onChange?.(e.target.value);
         setCaretPosition(e?.target?.selectionStart || 0);

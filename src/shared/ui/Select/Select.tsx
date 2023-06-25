@@ -4,28 +4,16 @@ import type { MouseEventHandler } from 'react';
 import Arrow from 'shared/assets/arrow-down.svg';
 import { classNames } from 'shared/lib/classNames/classNames';
 
-import { Option, OptionEl } from './Option/Option';
+import { OptionEl } from './Option/Option';
+import { Option } from './Option/Option.type';
 import cls from './Select.module.scss';
+import type { SelectProps } from './Select.type';
 
 // TODO move some logic in hooks
 // TODO change option login in Portals
 
-export type Theme = 'primary' | 'inverted';
-
-type SelectProps = {
-  theme?: Theme;
-  className?: string;
-  selected: Option | null;
-  options: Option[];
-  placeholder?: string;
-  mode?: 'rows' | 'cells';
-  status?: 'default' | 'invalid';
-  onChange?: (selected: Option['value']) => void;
-  onClose?: () => void;
-};
-
 const Select = ({
-  theme,
+  theme = 'primary',
   className,
   mode = 'rows',
   options,

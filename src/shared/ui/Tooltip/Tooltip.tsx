@@ -1,27 +1,11 @@
-import {
-  type MouseEvent,
-  type MouseEventHandler,
-  type ReactElement,
-} from 'react';
+import { type MouseEvent } from 'react';
 
 import { useOutside } from 'shared/lib/hooks/useOutside/useOutside';
 import { useTooltipSetPosition } from 'shared/lib/hooks/useTooltipSetPosition/useTooltipSetPosition';
 import { Portal } from 'shared/ui/Portal/Portal';
 
 import cls from './Tooltip.module.scss';
-
-interface TooltipChildProps {
-  onMouseEnter: MouseEventHandler<HTMLElement>;
-  onMouseLeave: MouseEventHandler<HTMLElement>;
-}
-
-export type TooltipType = 'top' | 'right' | 'left' | 'bottom';
-
-export interface TooltipProps {
-  text: string;
-  type?: TooltipType;
-  children: (props: TooltipChildProps) => ReactElement;
-}
+import type { TooltipProps } from './Tooltip.type';
 
 // TODO automaticly setPosition
 

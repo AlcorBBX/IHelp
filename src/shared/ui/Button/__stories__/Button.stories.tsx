@@ -6,7 +6,7 @@ import 'shared/styles/index.scss';
 import { Icon } from 'shared/ui/Icon/Icon';
 
 import { Button } from '../Button';
-import type { ButtonProps } from '../Button';
+import type { ButtonProps } from '../Button.type';
 
 export default {
   title: 'Components/Button',
@@ -47,6 +47,10 @@ export const Size = SizeTemplate.bind({});
 
 const IconTemplate: StoryFn<ButtonProps> = (args) => (
   <React.Fragment>
+    <Button {...args}>
+      <Icon type="magnifier" />
+    </Button>
+    <span style={{ margin: '16px' }} />
     <Button {...args}>No icon</Button>
     <span style={{ margin: '16px' }} />
     <Button {...args}>

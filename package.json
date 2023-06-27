@@ -9,8 +9,8 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "sbook": "storybook dev -p 6006",
+    "build-sbook": "storybook build",
     "prepare": "husky install"
   },
   "dependencies": {

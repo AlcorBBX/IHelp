@@ -1,0 +1,86 @@
+.card {
+  display: flex;
+  /* max-width: min-content; */
+  max-width: max-content;
+
+  padding: 15px;
+
+  flex-direction: column;
+
+  border-radius: 15px;
+
+  /* background: transparent; */
+}
+
+.head {
+  width: 100%;
+  display: flex;
+  /* align-items: center; */
+
+  &Wrapper {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+  &Title {
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
+    /* text-overflow: ellipsis; */
+  }
+
+  .extra {
+  }
+}
+
+.body {
+}
+
+.actions {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  & > li {
+    padding: 10px 0px;
+    text-align: center;
+    /* cursor: pointer; */
+
+    &:first-child {
+      border-left: 0;
+      border-radius: 0 0 0 10px;
+    }
+    &:last-child {
+      border-right: 0;
+      border-radius: 0 0 10px 0;
+    }
+
+    &:hover {
+      /* background-color: aliceblue; */
+    }
+  }
+}
+
+// Themes
+
+.background {
+  background: var(--bg-color);
+}
+
+.backgroundInverted {
+  background: var(--sub-alt-color);
+}
+
+.inverted {
+}
+
+.outlinedDanger {
+}
+
+.clear {
+}
+
+.outline {
+}

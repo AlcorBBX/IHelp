@@ -2,7 +2,7 @@ import { memo, useLayoutEffect, useState } from 'react';
 
 import { theme } from 'shared/lib/theme/ThemeContext';
 import { useTheme } from 'shared/lib/theme/useTheme';
-import Select from 'shared/ui/Select/Select';
+import { Select } from 'shared/ui/Select';
 
 interface ThemeSwitcherProps {
   className?: string;

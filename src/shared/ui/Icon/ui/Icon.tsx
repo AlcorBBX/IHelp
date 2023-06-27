@@ -3,14 +3,14 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Icon.module.scss';
 import { IconProps } from './Icon.type';
 
-export const Icon = (props: IconProps) => {
-  const { theme = 'primary', className, onClick, type } = props;
+export const Icon = ({
+  theme = 'primary',
+  className,
+  onClick,
+  type,
+}: IconProps) => {
   const mods = {
     [cls[theme]]: true,
-    // [cls.square]: square,
-    // [cls[size]]: true,
-    // [cls.disabled]: disabled,
-    // [cls.active]: active,
   };
   return (
     <div className={classNames(cls.root, mods, [className])} onClick={onClick}>

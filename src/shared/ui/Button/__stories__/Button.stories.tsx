@@ -3,10 +3,10 @@ import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import 'shared/styles/index.scss';
-import { Icon } from 'shared/ui/Icon/Icon';
+import { Icon } from 'shared/ui/Icon';
 
-import { Button } from '../Button';
-import type { ButtonProps } from '../Button.type';
+import { Button } from '../ui/Button';
+import type { ButtonProps } from '../ui/Button.type';
 
 export default {
   title: 'Components/Button',

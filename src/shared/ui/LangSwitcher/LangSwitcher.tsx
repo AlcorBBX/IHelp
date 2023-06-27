@@ -2,7 +2,7 @@ import { memo } from 'react';
 
 import { useI18N } from '@ayub-begimkulov/i18n';
 
-import Select from '../Select/Select';
+import { Select } from 'shared/ui/Select';
 
 interface LangSwitcherProps {
   className?: string;

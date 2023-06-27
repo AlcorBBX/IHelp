@@ -3,10 +3,10 @@ import React from 'react';
 import type { Meta, StoryFn } from '@storybook/react';
 
 import 'shared/styles/index.scss';
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button';
 
-import { Tooltip } from '../Tooltip';
-import type { TooltipProps } from '../Tooltip.type';
+import { Tooltip } from '../ui/Tooltip';
+import type { TooltipProps } from '../ui/Tooltip.type';
 
 export default {
   title: 'Components/Tooltip',

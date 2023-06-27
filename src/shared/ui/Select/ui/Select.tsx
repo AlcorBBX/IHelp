@@ -12,7 +12,7 @@ import type { SelectProps } from './Select.type';
 // TODO move some logic in hooks
 // TODO change option login in Portals
 
-const Select = ({
+export const Select = ({
   theme = 'primary',
   className,
   mode = 'rows',
@@ -110,5 +110,3 @@ const Select = ({
     </div>
   );
 };
-
-export default Select;

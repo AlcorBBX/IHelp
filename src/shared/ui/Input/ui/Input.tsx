@@ -1,18 +1,11 @@
-import {
-  type ChangeEvent,
-  type FC,
-  memo,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import { type ChangeEvent, memo, useEffect, useRef, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 
 import cls from './Input.module.scss';
 import { InputProps } from './Input.type';
 
-export const Input: FC<InputProps> = memo(
+export const Input = memo(
   ({
     className,
     loading,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Button } from 'shared/ui/Button/Button';
+import { Button } from 'shared/ui/Button';
 
 interface BugButtonProps {
   className?: string;

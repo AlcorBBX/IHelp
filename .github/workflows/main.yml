@@ -18,7 +18,7 @@ jobs:
       #   with:
       #     node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm ci
+        run: npm i
       - name: linting typescript
         run: npm run lint:ts
         if: always()

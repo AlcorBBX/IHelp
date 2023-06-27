@@ -12,7 +12,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       onClick,
       loading,
       children,
-      theme = 'background',
+      theme = 'primary',
       square = false,
       disabled = false,
       active = false,
@@ -21,7 +21,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     } = props;
 
     const mods = {
-      // [cls[theme]]: true,
+      [cls[theme]]: true,
       [cls.square]: square,
       [cls[size]]: true,
       [cls.disabled]: disabled,
@@ -31,7 +31,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     return (
       <button
         ref={ref}
-        className={classNames(cls.button, mods, [className, cls[theme]])}
+        className={classNames(cls.button, mods, [className])}
         disabled={disabled}
         onClick={onClick}
         {...otherProps}

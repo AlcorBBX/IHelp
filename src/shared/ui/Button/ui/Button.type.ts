@@ -1,9 +1,8 @@
 import type { ButtonHTMLAttributes, MouseEvent } from 'react';
 
 type ButtonTheme =
-  | 'inverted'
+  | 'primary'
   | 'background'
-  | 'backgroundInverted'
   | 'outlinedDanger'
   | 'outline'
   | 'clear'

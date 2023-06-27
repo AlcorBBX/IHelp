@@ -20,6 +20,28 @@ const DefaultTemplate: StoryFn<ButtonProps> = (args) => (
 );
 export const Default = DefaultTemplate.bind({});
 
+const ThemesTemplate: StoryFn<ButtonProps> = (args) => (
+  <div>
+    <Button theme="background" {...args}>
+      background
+    </Button>
+    <span style={{ margin: '16px' }} />
+    <Button theme="primary" {...args}>
+      primary
+    </Button>
+    <span style={{ margin: '16px' }} />
+    <Button theme="clear" {...args}>
+      clear
+    </Button>
+    <span style={{ margin: '16px' }} />
+    <Button theme="outline" {...args}>
+      outline
+    </Button>
+    <span style={{ margin: '16px' }} />
+  </div>
+);
+export const Themes = ThemesTemplate.bind({});
+
 const SizeTemplate: StoryFn<ButtonProps> = (args) => (
   <div>
     <Button {...args} size="xs">

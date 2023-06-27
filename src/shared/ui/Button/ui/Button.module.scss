@@ -15,8 +15,6 @@
   -webkit-user-select: none;
   user-select: none;
   // transition: ;
-  color: var(--text-color);
-  background: var(--sub-alt-color);
   border: none;
 
   &:hover {
@@ -44,13 +42,32 @@
   pointer-events: none;
 }
 
-.inverted {
-  background: var(--bg-color);
+/* THEMES */
+.primary {
+  background: var(--sub-alt-color);
+  color: var(--text-color);
+
+  &:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    outline: none;
+  }
+
+  &:active {
+    background: var(--sub-color);
+    color: var(--bg-color);
+  }
+}
+
+.background {
+  background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: none;
 }
 
 .clear,
 .clearInverted {
-  color: #383e42;
+  color: var(--text-color);
   border: none;
   background: none;
   outline: none;
@@ -61,8 +78,8 @@
 }
 
 .outline {
-  border: 1px solid var(--primary-color);
-  color: var(--primary-color);
+  border: 1px solid var(--sub-alt-color);
+  color: var(--text-color);
   background: none;
 }
 
@@ -80,26 +97,7 @@
   /*   box-shadow: 0 0 0 0.15em var(--error-color); */
   /* } */
 }
-
-.background {
-  background-color: var(--bg-color);
-  color: var(--primary-color);
-  border: none;
-}
-
-.backgroundInverted {
-  background-color: var(--inverted-bg-color);
-  color: var(--bg-color);
-  border: none;
-
-  &:hover {
-    background-color: var(--inverted-primary-color);
-  }
-
-  &:active {
-    background-color: var(--primary-color);
-  }
-}
+/* THEMES */
 
 .square {
   padding: 0;

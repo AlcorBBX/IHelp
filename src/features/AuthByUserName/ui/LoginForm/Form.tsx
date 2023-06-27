@@ -1,6 +1,5 @@
-// import { useState } from 'react';
 import { Button } from 'shared/ui/Button/Button';
-import { Input, InputTheme } from 'shared/ui/Input/Input';
+import { Input } from 'shared/ui/Input/Input';
 
 import cls from './LoginForm.module.scss';
 
@@ -10,8 +9,8 @@ interface FormProps {
   closeEyeClick?(): void;
   onChangePassword?: (value: string) => void;
   onChangeUserName?: (value: string) => void;
-  name?: string;
-  password?: string;
+  name: string;
+  password: string;
   isLoading?: boolean;
 }
 
@@ -28,7 +27,7 @@ export const Form = ({
   return (
     <form>
       <Input
-        theme={InputTheme.INVERTED}
+        theme="inverted"
         type="text"
         label="Write name"
         className={cls.input}
@@ -39,7 +38,7 @@ export const Form = ({
         onClick={openEyeClick}
       />
       <Input
-        theme={InputTheme.INVERTED}
+        theme="inverted"
         type="text"
         label="Write password"
         className={cls.input}

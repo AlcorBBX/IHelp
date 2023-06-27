@@ -3,9 +3,7 @@ import { memo, useCallback, useRef } from 'react';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useDispatch, useSelector } from 'react-redux';
 
-// @ts-ignore
 import monkey from 'shared/assets/monkey/monkey.gif';
-// @ts-ignore
 import monkeyeyesclosed from 'shared/assets/monkey/monkeyclosedeye.gif';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
@@ -14,7 +12,7 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { FaceAnimation } from 'shared/ui/FaceAnimation/FaceAnimation';
-import { Text, TextTheme } from 'shared/ui/Text/Text';
+import { Text } from 'shared/ui/Text/Text';
 
 import { getLoginState } from '../../model/selectors/getLoginState/getLoginState';
 import { loginByUserName } from '../../model/services/loginByUserName/loginByUserName';
@@ -36,14 +34,21 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const dispatch = useAppDispatch();
   const { username, password, isLoading, error } = useSelector(getLoginState);
 
-  const imgref = useRef(null);
+  const imgref = useRef<HTMLDivElement | null>(null);
   function closeye() {
+    if (!imgref) return;
+    if (!imgref.current) return;
+
     imgref.current.style.backgroundImage = `url(${monkeyeyesclosed})`;
-    imgref.current.firstChild.style.marginTop = '0%';
+
+    // imgref.current.firstChild.style.marginTop = '0%';
   }
   function openeye() {
+    if (!imgref) return;
+    if (!imgref.current) return;
+
     imgref.current.style.backgroundImage = `url(${monkey})`;
-    imgref.current.firstChild.style.marginTop = '110%';
+    // imgref.current.firstChild.style.marginTop = '110%';
   }
 
   // const handleLogin = (email: string, password: string) => {
@@ -71,8 +76,9 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     async (username: string, password: string) => {
       try {
         const auth = getAuth();
-        signInWithEmailAndPassword(auth, username, password).then((data) =>
-          dispatch(loginByUserName({ username, password })),
+        signInWithEmailAndPassword(auth, username, password).then(
+          (data) => console.log(data),
+          // dispatch(loginByUserName({ username, password })),
         );
       } catch (error) {}
     },
@@ -90,10 +96,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
           <GoogleAuthAction />
         </div>
         {error && (
-          <Text
-            text="Вы ввели неправильный логин или пароль"
-            theme={TextTheme.ERROR}
-          />
+          <Text text="Вы ввели неправильный логин или пароль" theme="error" />
         )}
         <Form
           handleClick={onLoginClick}

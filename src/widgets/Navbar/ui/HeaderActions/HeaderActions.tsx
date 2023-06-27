@@ -1,14 +1,10 @@
+import { Icon } from 'shared/ui/Icon';
 import { SmallProfile } from 'shared/ui/SmallProfile/SmallProfile';
-
-import Settings from 'widgets/Navbar/assets/icons/setting.svg';
 
 import cls from './HeaderActions.module.scss';
 import { HeaderActionsItem } from './HeaderActionsItem/HeaderActionsItem';
 
 export const HeaderActions = () => {
-  const handleClick = () => {
-    console.log('f');
-  };
   return (
     <div className={cls.headerActions}>
       <div className={cls.headerActionsWrapper}>
@@ -21,6 +17,8 @@ export const HeaderActions = () => {
       </div>
       <div className={cls.headerActionsWrapper}>
         <SmallProfile nickname="alcobbx" lvl={85} />
+        <Icon type="bell" />
+        <Icon type="exit" />
       </div>
     </div>
   );

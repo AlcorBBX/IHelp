@@ -5,8 +5,8 @@ import { getProfileError } from 'entities/Profile/model/selectors/getProfileErro
 import { getProfileIsLoading } from 'entities/Profile/model/selectors/getProfileIsLoading';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button/Button';
-import { Input } from 'shared/ui/Input/Input';
+import { Button } from 'shared/ui/Button';
+import { Input } from 'shared/ui/Input';
 import { Text } from 'shared/ui/Text/Text';
 
 import cls from './ProfileCard.module.scss';

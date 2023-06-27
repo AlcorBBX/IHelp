@@ -2,6 +2,7 @@ import type { Meta, StoryFn } from '@storybook/react';
 
 import 'shared/styles/index.scss';
 import { Button } from 'shared/ui/Button';
+import { Icon } from 'shared/ui/Icon';
 
 import { Card } from '../ui/Card';
 import type { CardProps } from '../ui/Card.type';
@@ -29,10 +30,18 @@ const FullTemplate: StoryFn<CardProps> = (args) => (
     <Card
       title="Title"
       // cover={<p>d</p>}
-      extra={<Button theme="outlinedDanger">X</Button>}
+      extra={<Button theme="primary">X</Button>}
       actions={[
-        [<Button theme="outlinedDanger">add</Button>],
-        [<Button theme="outlinedDanger">delete</Button>],
+        [
+          <Button theme="outlinedDanger">
+            <Icon type="like" />
+          </Button>,
+        ],
+        [
+          <Button theme="outlinedDanger">
+            <Icon type="dislike" />
+          </Button>,
+        ],
       ]}
       size="default"
       theme="background"

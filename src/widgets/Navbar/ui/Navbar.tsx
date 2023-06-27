@@ -8,7 +8,6 @@ import { useTranslate } from '@ayub-begimkulov/i18n';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 
-import { HeaderActions } from './HeaderActions/HeaderActions';
 import { HeaderLogo } from './HeaderLogo/HeaderLogo';
 import cls from './Navbar.module.scss';
 

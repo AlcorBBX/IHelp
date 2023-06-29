@@ -5,7 +5,9 @@ import {
   useTranslate as useTranslateBase,
 } from '@ayub-begimkulov/i18n';
 
+// @ts-ignore
 import en from './locales/en.json';
+// @ts-ignore
 import ru from './locales/ru.json';
 
 const pluralizeEn = createPluralize('en');

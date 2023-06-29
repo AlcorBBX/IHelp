@@ -30,17 +30,19 @@
   color: var(--sub-alt-color);
 }
 
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
+
+  background: var(--bg-color);
   scrollbar-color: var(--sub-color);
   font: var(--font-m);
   color: var(--text-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-.app {
-  min-height: 100vh;
-  background: var(--bg-color);
 }
 
 .content-page {

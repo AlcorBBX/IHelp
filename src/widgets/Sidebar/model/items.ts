@@ -3,7 +3,6 @@ import React from 'react';
 // import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 // import MainIcon from 'shared/assets/icons/main-20-20.svg';
 // import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 
 export interface SidebarItemType {
   path: string;
@@ -13,22 +12,22 @@ export interface SidebarItemType {
 
 export const SidebarItemList: SidebarItemType[] = [
   {
-    path: RoutePath.main,
+    path: '/',
     // Icon: MainIcon,
     text: 'Main page',
   },
   {
-    path: RoutePath.about,
+    path: '/about',
     // Icon: AboutIcon,
     text: 'About',
   },
   {
-    path: RoutePath.profile,
+    path: '/profile',
     // Icon: ProfileIcon,
     text: 'Profile',
   },
   {
-    path: RoutePath.settings,
+    path: '/settings',
     // Icon: ProfileIcon,
     text: 'Settings',
   },

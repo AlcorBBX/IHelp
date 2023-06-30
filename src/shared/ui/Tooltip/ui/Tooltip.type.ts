@@ -5,7 +5,7 @@ interface TooltipChildProps {
   onMouseLeave: MouseEventHandler<HTMLElement>;
 }
 
-type TooltipPosition = 'top' | 'right' | 'left' | 'bottom';
+export type TooltipPosition = 'top' | 'right' | 'left' | 'bottom';
 
 export interface TooltipProps {
   text: string;

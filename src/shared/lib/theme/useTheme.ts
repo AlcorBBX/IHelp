@@ -3,7 +3,7 @@ import { useContext } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext } from './ThemeContext';
 
 interface UseThemeResult {
-  theme: Theme;
+  theme?: Theme;
   changeTheme: (value: string) => void;
 }
 

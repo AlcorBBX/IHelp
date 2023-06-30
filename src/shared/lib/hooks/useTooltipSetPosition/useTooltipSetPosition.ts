@@ -1,9 +1,9 @@
 import { type RefObject, useLayoutEffect, useState } from 'react';
 
-import { TooltipType } from 'shared/ui/Tooltip/Tooltip';
+import type { TooltipPosition } from 'shared/ui/Tooltip/ui/Tooltip.type';
 
 interface useSetPositionProps {
-  type: TooltipType;
+  type: TooltipPosition;
   anchorEl: HTMLElement | null;
   ref: RefObject<HTMLDivElement>;
 }

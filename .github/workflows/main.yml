@@ -15,9 +15,9 @@ jobs:
       - uses: actions/checkout@v2
       - name: install modules
         run: npm i
+      - name: check build
+        run: npm run build
+        if: always()
       - name: linting typescript
         run: npm run lint:ts
         if: always()
-      # - name: unit testing
-      #   if: always()
-      #   run: npm run test:unit

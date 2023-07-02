@@ -14,7 +14,10 @@ interface ThemeProviderProps {
   initialTheme?: Theme;
 }
 
-const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
+export const ThemeProvider: FC<ThemeProviderProps> = ({
+  children,
+  initialTheme,
+}) => {
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
   const defaultProps = useMemo(
@@ -39,4 +42,3 @@ const ThemeProvider: FC<ThemeProviderProps> = ({ children, initialTheme }) => {
     </ThemeContext.Provider>
   );
 };
-export default ThemeProvider;

@@ -11,12 +11,16 @@ import {
 
 import 'shared/styles/index.scss';
 
+import { StoreProvider } from './providers/StoreProvider';
+
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ErrorBoundary>
       <I18Provider>
         <ThemeProvider>
-          <RouterProvider />
+          <StoreProvider>
+            <RouterProvider />
+          </StoreProvider>
         </ThemeProvider>
       </I18Provider>
     </ErrorBoundary>

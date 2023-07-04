@@ -17,4 +17,5 @@ yarn dev
 
 ---
 
-[Architecture]: https://github.com/AlcorBBX/IHelp/blob/master/docs/achitecture.md
+[Architecture]: https://github.com/AlcorBBX/IHelp/blob/master/docs/architecture.md
+

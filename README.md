@@ -8,3 +8,7 @@ This project can be run.
 yarn
 yarn dev
 ```
+
+## Links
+
+[Architecture]: https://github.com/AlcorBBX/IHelp/blob/master/docs/achitecture.md

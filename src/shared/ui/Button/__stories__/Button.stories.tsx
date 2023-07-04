@@ -14,17 +14,17 @@ export default {
 } as Meta;
 
 const DefaultTemplate: StoryFn<ButtonProps> = (args) => (
-  <Button theme="background" {...args}>
-    Button
-  </Button>
+  <Button {...args}>Button</Button>
 );
 export const Default = DefaultTemplate.bind({});
 
 const ThemesTemplate: StoryFn<ButtonProps> = (args) => (
   <div>
-    <Button theme="background" {...args}>
-      background
-    </Button>
+    <div style={{ background: 'grey', padding: '5px' }}>
+      <Button theme="background" {...args}>
+        background
+      </Button>
+    </div>
     <span style={{ margin: '16px' }} />
     <Button theme="primary" {...args}>
       primary

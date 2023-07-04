@@ -1,9 +1,8 @@
 import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
 type CardTheme =
-  | 'inverted'
+  | 'primary'
   | 'background'
-  | 'backgroundInverted'
   | 'outlinedDanger'
   | 'outline'
   | 'clear'

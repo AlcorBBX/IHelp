@@ -65,22 +65,24 @@
 
 // Themes
 
+.primary {
+  background: var(--sub-alt-color);
+}
+
 .background {
   background: var(--bg-color);
 }
 
-.backgroundInverted {
-  background: var(--sub-alt-color);
-}
-
-.inverted {
+.outline {
+  border: 1px solid var(--sub-alt-color);
 }
 
 .outlinedDanger {
+  border: 1px solid var(--error-color);
 }
 
 .clear {
 }
 
-.outline {
+.clearInverted {
 }

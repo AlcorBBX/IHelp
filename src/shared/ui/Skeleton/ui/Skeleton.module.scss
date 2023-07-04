@@ -1,0 +1,37 @@
+$animation-duration: 1.9s;
+
+@mixin background-gradient{
+    background-image: linear-gradient(90deg, var(--sub-alt-color) 0px, var(--sub-color) 40px, var(--sub-alt-color) 80px);
+    background-size: 700px;
+}
+
+.root{
+    width: 150px;
+    height: 50px;
+    background: var(--sub-alt-color);
+}
+
+.default{
+    width: 150px;
+    height: 50px;
+}
+
+.text{
+    border-radius: 2px;
+}
+
+.wave{
+    bottom: 1px;
+    @include background-gradient;
+    animation: wave-frame $animation-duration infinite linear;
+}
+
+@keyframes wave-frame {
+    0%{
+        background-position: -100px
+    }
+    
+    40%, 100% {
+        background-position: 360px
+    }
+}

@@ -16,22 +16,111 @@ $animation-duration: 1.9s;
     height: 50px;
 }
 
+.small {
+    &.text {
+        width: 75px;
+        height: 15px;
+    }
+    &.rounded {
+        width: 150px;
+        height: 30px;
+    }
+    &.rectangular {
+        width: 50px;
+        height: 50px;
+    }
+    &.circular {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.default {
+    &.text {
+        width: 175px;
+        height: 20px;
+    }
+    &.rounded {
+        width: 175px;
+        height: 50px;
+    }
+    &.rectangular {
+        width: 75px;
+        height: 75px;
+    }
+    &.circular {
+        width: 75px;
+        height: 75px;
+    }
+}
+
+.large {
+    &.text {
+        width: 300px;
+        height: 30px;
+    }
+    &.rounded {
+        width: 300px;
+        height: 70px;
+    }
+    &.rectangular {
+        width: 105px;
+        height: 105px;
+    }
+    &.circular {
+        width: 105px;
+        height: 105px;
+    }
+}
+
+
 .text{
-    border-radius: 2px;
+    border-radius: 5px;
+    width: 300px;
+    height: 25px;
+}
+
+.rounded{
+    border-radius: 15px;
+}
+
+.rectangular{
+    border-radius: 15px;
+    width: 105px;
+    height: 105px;
+}
+
+.circular{
+    border-radius:100%;
+    width: 105px;
+    height: 105px;
 }
 
 .wave{
-    bottom: 1px;
     @include background-gradient;
     animation: wave-frame $animation-duration infinite linear;
 }
 
+.pulse{
+    @include background-gradient;
+    animation: pulse-frame $animation-duration infinite alternate;
+}
+
 @keyframes wave-frame {
-    0%{
+    0% {
         background-position: -100px
     }
     
     40%, 100% {
         background-position: 360px
     }
+}
+
+@keyframes pulse-frame {
+   from {
+    background: var(--sub-alt-color)
+   }
+   to {
+    background: var(--sub-color)
+   }
 }

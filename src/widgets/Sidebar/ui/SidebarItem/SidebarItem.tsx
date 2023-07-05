@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { useTranslate } from '@ayub-begimkulov/i18n';
 
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { AppLink } from 'shared/ui/AppLink';
 
 import { SidebarItemType } from '../../model/items';
 import cls from './SidebarItem.module.scss';
@@ -18,7 +18,7 @@ export const SidebarItem = memo(
     const t = useTranslate();
     return (
       <AppLink
-        theme={AppLinkTheme.SECONDARY}
+        theme="primary"
         to={item.path}
         className={classNames(cls.item, { [cls.collapsed]: collapsed })}
       >

@@ -1,9 +1,9 @@
 import { type MouseEvent } from 'react';
 
 import { useOutside } from 'shared/lib/hooks/useOutside/useOutside';
-import { useTooltipSetPosition } from 'shared/lib/hooks/useTooltipSetPosition/useTooltipSetPosition';
 import { Portal } from 'shared/ui/Portal/Portal';
 
+import { useSetPosition } from '../lib/useSetPosition';
 import cls from './Tooltip.module.scss';
 import type { TooltipProps } from './Tooltip.type';
 
@@ -12,7 +12,7 @@ import type { TooltipProps } from './Tooltip.type';
 export const Tooltip = ({ children, text, type = 'top' }: TooltipProps) => {
   const { ref, anchorEl, setAnchorEl } = useOutside();
 
-  const { position } = useTooltipSetPosition({ type, anchorEl, ref });
+  const { position } = useSetPosition({ type, anchorEl, ref });
 
   return (
     <>

@@ -8,7 +8,7 @@ interface useSetPositionProps {
   ref: RefObject<HTMLDivElement>;
 }
 
-export const useTooltipSetPosition = ({
+export const useSetPosition = ({
   type,
   anchorEl,
   ref,

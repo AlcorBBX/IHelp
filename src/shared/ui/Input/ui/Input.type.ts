@@ -5,14 +5,22 @@ type HtmlInputProps = Omit<
   'value' | 'onChange'
 >;
 
+// type InputTheme =
+//   | 'clear'
+//   | 'outline'
+//   | 'outlinedDanger'
+//   | 'clearInverted'
+//   | 'background'
+//   | 'backgroundInverted'
+//   | 'inverted';
+
 type InputTheme =
-  | 'clear'
-  | 'outline'
-  | 'outlinedDanger'
-  | 'clearInverted'
+  | 'primary'
   | 'background'
-  | 'backgroundInverted'
-  | 'inverted';
+  | 'outlinedDanger'
+  | 'outline'
+  | 'clear'
+  | 'clearInverted';
 
 export interface InputProps extends HtmlInputProps {
   className?: string;

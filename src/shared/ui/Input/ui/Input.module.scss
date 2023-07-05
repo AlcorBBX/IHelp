@@ -22,18 +22,62 @@
   max-width: max-content;
 }
 
-.clear {
+/* THEMES */
+/* | 'primary' */
+/* | 'background' */
+/* | 'outlinedDanger' */
+/* | 'outline' */
+/* | 'clear' */
+/* | 'clearInverted'; */
+
+.primary {
   .inputContainer {
+    background: var(--sub-alt-color);
+    color: var(--text-color);
+  }
+}
+.background {
+  .inputContainer {
+    background-color: var(--bg-color);
+    color: var(--primary-color);
+  }
+}
+
+.outline {
+  .inputContainer {
+    border: 1px solid var(--sub-alt-color);
+    color: var(--text-color);
     background: none;
   }
 }
 
-.inverted {
+.outlinedDanger {
   .inputContainer {
-    background: var(--bg-color);
+    border: 0.15em solid var(--error-color);
+    color: var(--text-color);
+    background: none;
   }
 }
 
+.clear {
+  .inputContainer {
+    color: var(--text-color);
+    border: none;
+    background: none;
+    outline: none;
+  }
+}
+
+.clearInverted {
+  .inputContainer {
+    color: var(--primary-color);
+    border: none;
+    background: none;
+    outline: none;
+  }
+}
+
+/* THEMES */
 .input {
   background: transparent;
   border: none;

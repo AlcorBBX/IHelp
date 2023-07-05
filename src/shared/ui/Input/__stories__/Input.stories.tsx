@@ -33,28 +33,21 @@ const ThemeTemplate: StoryFn<InputProps> = (args) => (
       {...args}
     />
     <span style={{ margin: '16px' }} />
+    <div style={{ background: 'grey', padding: '5px' }}>
+      <Input
+        theme="background"
+        label="background theme"
+        placeholder="placeholder"
+        {...args}
+      />
+    </div>
+    <span style={{ margin: '16px' }} />
     <Input
-      theme="background"
-      label="background theme"
+      theme="primary"
+      label="primary theme"
       placeholder="placeholder"
       {...args}
     />
-    <span style={{ margin: '16px' }} />
-    <Input
-      theme="inverted"
-      label="inverted theme"
-      placeholder="placeholder"
-      {...args}
-    />
-    <span style={{ margin: '16px' }} />
-    <Input
-      theme="backgroundInverted"
-      label="backgroundInverted theme"
-      placeholder="placeholder"
-      {...args}
-    />
-    <span style={{ margin: '16px' }} />
-    <Input theme="clear" label="label" placeholder="placeholder" {...args} />
     <span style={{ margin: '16px' }} />
     <Input
       theme="clearInverted"
@@ -62,6 +55,8 @@ const ThemeTemplate: StoryFn<InputProps> = (args) => (
       placeholder="placeholder"
       {...args}
     />
+    <span style={{ margin: '16px' }} />
+    <Input theme="clear" label="clear" placeholder="placeholder" {...args} />
   </div>
 );
 export const Themes = ThemeTemplate.bind({});

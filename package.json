@@ -9,7 +9,7 @@
     "build": "tsc -p tsconfig.prod.json  && vite build",
     "coverage": "vitest run --coverage",
     "lint:ts": "eslint src --ext ts,tsx --report-unused-disable-directives",
-    "test": "vitest",
+    "test:unit": "vitest run",
     "test:ui": "vitest --ui",
     "preview": "vite preview",
     "sbook": "storybook dev -p 6006",

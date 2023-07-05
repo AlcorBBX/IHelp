@@ -8,6 +8,7 @@
     "dev": "vite",
     "build": "tsc -p tsconfig.prod.json  && vite build",
     "coverage": "vitest run --coverage",
+    "staged": "npx lint-staged --concurrent false",
     "lint:ts": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "test:unit": "vitest run",
     "test:ui": "vitest --ui",
@@ -58,6 +59,7 @@
     "eslint-plugin-storybook": "^0.6.12",
     "husky": "^8.0.3",
     "jsdom": "^22.1.0",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
@@ -71,5 +73,8 @@
     "zod": "^3.21.4"
   },
   "readme": "ERROR: No README data found!",
-  "_id": "interview-help@0.0.0"
+  "_id": "interview-help@0.0.0",
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,html, css, scss}": "yarn lint:ts"
+  }
 }

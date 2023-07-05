@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-npm run staged 
-# npm run test:unit
-# npm run build
+npm run test:unit
+npm run build

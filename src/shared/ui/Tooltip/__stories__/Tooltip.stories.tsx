@@ -9,7 +9,7 @@ import { Tooltip } from '../ui/Tooltip';
 import type { TooltipProps } from '../ui/Tooltip.type';
 
 export default {
-  title: 'Components/Tooltip',
+  title: 'UiKit/Tooltip',
   component: Tooltip,
 } as Meta;
 

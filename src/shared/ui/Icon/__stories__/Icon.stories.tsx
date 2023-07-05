@@ -6,7 +6,7 @@ import { Icon } from '../ui/Icon';
 import { IconProps } from '../ui/Icon.type';
 
 export default {
-  title: 'Components/Icon',
+  title: 'UiKit/Icon',
   component: Icon,
 } as Meta;
 

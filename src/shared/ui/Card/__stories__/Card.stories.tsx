@@ -8,7 +8,7 @@ import { Card } from '../ui/Card';
 import type { CardProps } from '../ui/Card.type';
 
 export default {
-  title: 'Components/Card',
+  title: 'UiKit/Card',
   component: Card,
 } as Meta;
 

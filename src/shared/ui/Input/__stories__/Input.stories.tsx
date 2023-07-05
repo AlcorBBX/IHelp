@@ -6,7 +6,7 @@ import { Input } from '../ui/Input';
 import { InputProps } from '../ui/Input.type';
 
 export default {
-  title: 'Components/Input',
+  title: 'UiKit/Input',
   component: Input,
 } as Meta;
 

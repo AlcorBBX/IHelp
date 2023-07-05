@@ -9,7 +9,7 @@ import { Button } from '../ui/Button';
 import type { ButtonProps } from '../ui/Button.type';
 
 export default {
-  title: 'Components/Button',
+  title: 'UiKit/Button',
   component: Button,
 } as Meta;
 

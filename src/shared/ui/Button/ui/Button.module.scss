@@ -78,13 +78,15 @@
 }
 
 .outline {
-  border: 1px solid var(--sub-alt-color);
+  border: 0.15em solid var(--sub-alt-color);
   color: var(--text-color);
   background: none;
 }
 
 .outlinedDanger {
-  box-shadow: 0 0 0 0.15em var(--error-color);
+  border: 0.15em solid var(--error-color);
+  color: var(--text-color);
+  background: none;
 
   &:hover {
     background: var(--text-color);

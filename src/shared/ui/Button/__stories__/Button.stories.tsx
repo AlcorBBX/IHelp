@@ -38,6 +38,9 @@ const ThemesTemplate: StoryFn<ButtonProps> = (args) => (
       outline
     </Button>
     <span style={{ margin: '16px' }} />
+    <Button theme="outlinedDanger" {...args}>
+      outline
+    </Button>
   </div>
 );
 export const Themes = ThemesTemplate.bind({});

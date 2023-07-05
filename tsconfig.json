@@ -24,7 +24,9 @@
     "allowSyntheticDefaultImports": true,
     "lib": ["es5", "es6", "dom"],
 
-    "strict": true
+    "strict": true,
+
+    "types": ["node", "vite/client"]
   },
   "ts-node": {
     "compilerOptions": {

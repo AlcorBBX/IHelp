@@ -1,6 +1,6 @@
 import { Option } from './Option/Option.type';
 
-export type SelectTheme = 'primary' | 'inverted';
+export type SelectTheme = 'primary' | 'background';
 
 export interface SelectProps {
   theme?: SelectTheme;

@@ -1,9 +1,10 @@
+// TODO fix max-height
 .select {
-  background: var(--sub-alt-color);
-  border-radius: 10px;
-  /* display: flex; */
+  overflow-y: auto;
+  max-height: 50vh;
+
+  border-radius: var(--border-radius);
   align-items: center;
-  color: var(--text-color);
   display: grid;
   position: absolute;
   list-style: none;
@@ -14,16 +15,32 @@
   z-index: 10;
 }
 
-.inverted {
+.primary {
+  .select {
+    background: var(--sub-alt-color);
+    color: var(--text-color);
+  }
+
+  .placeholder {
+    background: var(--sub-alt-color);
+    color: var(--text-color);
+  }
+}
+
+.background {
   .placeholder {
     background: var(--bg-color);
+  }
+  .select {
+    background: var(--bg-color);
+    color: var(--text-color);
   }
 }
 
 .selectDropdown {
-  background: var(--bg-color);
-  border-color: var(--sub-alt-color);
-  color: var(--sub-color);
+  /* background: var(--bg-color); */
+  /* border-color: var(--sub-alt-color); */
+  /* color: var(--sub-color); */
 }
 
 // ----------------------------------------------------
@@ -53,8 +70,8 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  color: var(--text-color);
-  background: var(--sub-alt-color);
+  /* color: var(--text-color); */
+  /* background: var(--sub-alt-color); */
   box-sizing: border-box;
   width: 100%;
   border-radius: 10px;

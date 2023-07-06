@@ -18,7 +18,7 @@ export const LangSwitcher = memo(({ className }: LangSwitcherProps) => {
 
   return (
     <Select
-      theme="inverted"
+      theme="background"
       mode="rows"
       options={langs}
       selected={l || null}

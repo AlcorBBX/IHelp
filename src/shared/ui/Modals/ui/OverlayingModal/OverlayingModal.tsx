@@ -1,28 +1,15 @@
-import React, {
-  ReactNode,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/lib/theme/useTheme';
 import { Portal } from 'shared/ui/Portal/Portal';
 
-import cls from './Modal.module.scss';
-
-interface ModalProps {
-  className?: string;
-  children?: ReactNode;
-  isOpen?: boolean;
-  onClose?: () => void;
-  lazy?: boolean;
-}
+import cls from './OverlayingModal.module.scss';
+import { ModalProps } from './OverlayingModal.type';
 
 const ANIMATION_DELAY = 300;
 
-export const Modal = ({
+export const OverlayingModal = ({
   className,
   children,
   isOpen = false,

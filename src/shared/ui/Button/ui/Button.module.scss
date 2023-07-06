@@ -71,6 +71,15 @@
   border: none;
   background: none;
   outline: none;
+
+  &:hover {
+    background: none !important;
+    opacity: 0.8;
+  }
+  &:active {
+    background: none !important;
+    opacity: 0.4;
+  }
 }
 
 .clearInverted {

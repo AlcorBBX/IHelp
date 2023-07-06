@@ -1,0 +1,19 @@
+.loginform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 400px;
+  p:first-child {
+    text-align: center;
+  }
+  &Actions {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.authActionsWrapper {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}

@@ -21,8 +21,7 @@ export const Layout = ({
           <Outlet />
         </div>
       </div>
-      <footer className={cls.footer} />
-      {bottomSlot}
+      {bottomSlot && <footer className={cls.footer}>{bottomSlot}</footer>}
       <ScrollRestoration />
     </div>
   );

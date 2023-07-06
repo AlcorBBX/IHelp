@@ -7,16 +7,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.prod.json  && vite build",
-    "coverage": "vitest run --coverage",
+    "preview": "vite preview",
+    "sbook": "storybook dev -p 6006",
+    "build-sbook": "storybook build",
+    "chromatic": "npx chromatic --project-token=$(import.meta.env.VITE_CHROMATIC_TOKEN) --build-script-name=build-sbook",
     "staged": "npx lint-staged --concurrent false",
     "lint:ts": "eslint src --ext ts,tsx --report-unused-disable-directives",
     "test:unit": "vitest run",
     "test:ui": "vitest --ui",
-    "preview": "vite preview",
-    "sbook": "storybook dev -p 6006",
-    "build-sbook": "storybook build",
-    "prepare": "husky install",
-    "chromatic": "npx chromatic --project-token=$(import.meta.env.VITE_CHROMATIC_TOKEN) --build-script-name=build-sbook"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@ayub-begimkulov/i18n": "^0.2.1",
@@ -75,6 +75,6 @@
   "readme": "ERROR: No README data found!",
   "_id": "interview-help@0.0.0",
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,html, css, scss}": "yarn lint:ts"
+    "*.{ts,tsx}": "yarn lint:ts"
   }
 }

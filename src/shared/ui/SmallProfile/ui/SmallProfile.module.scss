@@ -1,0 +1,24 @@
+@import '../../../../shared/styles/mixins/mixins.scss';
+
+@include respond(tab-port) {
+  .profileNickname {
+    display: none;
+  }
+}
+.profileContainer {
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  &Icon {
+  }
+
+  &Nickname {
+  }
+
+  &LvlCard {
+    span {
+    }
+  }
+}

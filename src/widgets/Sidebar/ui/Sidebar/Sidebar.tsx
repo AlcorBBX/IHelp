@@ -1,4 +1,4 @@
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
@@ -19,6 +19,22 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   const onToggle = () => {
     setCollapsed((prev) => !prev);
   };
+
+  // TODO dont foget optimaze
+  const onKeyToggleHandler = (e: KeyboardEvent) => {
+    if (e.key === 'E') {
+      onToggle();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', onKeyToggleHandler);
+
+    return () => {
+      window.removeEventListener('keydown', onKeyToggleHandler);
+    };
+  }, [collapsed, onKeyToggleHandler]);
+  // TODO dont foget optimaze
 
   return (
     <div

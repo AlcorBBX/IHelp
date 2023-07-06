@@ -6,12 +6,11 @@ import {
   ErrorBoundary,
   I18Provider,
   RouterProvider,
+  StoreProvider,
   ThemeProvider,
 } from 'app/providers';
 
 import 'shared/styles/index.scss';
-
-import { StoreProvider } from './providers/StoreProvider';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

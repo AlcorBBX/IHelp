@@ -2,6 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink';
 import { Card } from 'shared/ui/Card';
 import { Icon } from 'shared/ui/Icon';
+import { Skeleton } from 'shared/ui/Skeleton';
 
 import cls from './SmallProfile.module.scss';
 import { SmallProfileProps } from './SmallProfile.type';
@@ -13,7 +14,10 @@ export const SmallProfile = ({
   nickname,
   className,
   profileLink,
+  loading,
 }: SmallProfileProps) => {
+  if (loading) return <Skeleton variant="rounded" />;
+
   return (
     <div className={classNames(cls.profileContainer, {}, [className])}>
       <AppLink to={profileLink} className={cls.profile} theme="clear">

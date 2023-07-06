@@ -3,4 +3,5 @@ export interface SmallProfileProps {
   lvl: number;
   className?: string;
   profileLink: string;
+  loading?: boolean;
 }

@@ -4,12 +4,12 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'shared/lib/theme/useTheme';
 import { Portal } from 'shared/ui/Portal/Portal';
 
-import cls from './OverlayingModal.module.scss';
-import { ModalProps } from './OverlayingModal.type';
+import cls from './Modal.module.scss';
+import { ModalProps } from './Modal.type';
 
 const ANIMATION_DELAY = 300;
 
-export const OverlayingModal = ({
+export const Modal = ({
   className,
   children,
   isOpen = false,

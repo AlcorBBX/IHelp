@@ -5,12 +5,12 @@ import type { Meta, StoryFn } from '@storybook/react';
 import 'shared/styles/index.scss';
 import { Button } from 'shared/ui/Button';
 
-import { OverlayingModal } from '../ui/OverlayingModal/OverlayingModal';
-import { ModalProps } from '../ui/OverlayingModal/OverlayingModal.type';
+import { Modal } from '../ui/Modal/Modal';
+import { ModalProps } from '../ui/Modal/Modal.type';
 
 export default {
   title: 'UiKit/Modals',
-  component: OverlayingModal,
+  component: Modal,
 } as Meta;
 
 const DefaultTemplate: StoryFn<ModalProps> = (args) => {
@@ -27,9 +27,9 @@ const DefaultTemplate: StoryFn<ModalProps> = (args) => {
     <div>
       <Button onClick={onShowModal}>Open modal</Button>
       {/* {open && ( */}
-      <OverlayingModal isOpen={open} onClose={onCloseModal} {...args}>
+      <Modal isOpen={open} onClose={onCloseModal} {...args}>
         Modal
-      </OverlayingModal>
+      </Modal>
       {/* )} */}
     </div>
   );

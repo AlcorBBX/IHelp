@@ -86,3 +86,32 @@ const ThemesTemplate: StoryFn<CardProps> = (args) => (
   </div>
 );
 export const Themes = ThemesTemplate.bind({});
+
+const LoadingTemplate: StoryFn<CardProps> = (args) => (
+  <div>
+    <Card
+      loading={true}
+      theme="primary"
+      title="Title"
+      // cover={<p>d</p>}
+      extra={<Button theme="primary">X</Button>}
+      actions={[
+        [
+          <Button theme="outlinedDanger">
+            <Icon type="like" />
+          </Button>,
+        ],
+        [
+          <Button theme="outlinedDanger">
+            <Icon type="dislike" />
+          </Button>,
+        ],
+      ]}
+      size="default"
+      {...args}
+    >
+      <div>Card's background</div>
+    </Card>
+  </div>
+);
+export const Loading = LoadingTemplate.bind({});

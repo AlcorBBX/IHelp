@@ -107,3 +107,13 @@ export const Selected: StoryFn<ButtonProps> = (args) => {
     </Button>
   );
 };
+
+export const Loading: StoryFn<ButtonProps> = (args) => {
+  const [loading, setLoading] = React.useState(true);
+
+  return (
+    <Button {...args} loading={loading} onClick={() => setLoading(!loading)}>
+      {`Button is ${loading ? 'on' : 'off'}`}
+    </Button>
+  );
+};

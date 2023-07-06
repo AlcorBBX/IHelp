@@ -1,6 +1,7 @@
 import { type ReactNode, forwardRef } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Skeleton } from 'shared/ui/Skeleton';
 
 import cls from './Card.module.scss';
 import { CardProps } from './Card.type';
@@ -35,7 +36,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
     ...others
   } = props;
 
-  const loadingBlock = 'loading';
+  const loadingBlock = <Skeleton variant="rounded" />;
 
   let head: ReactNode;
   if (title || extra) {

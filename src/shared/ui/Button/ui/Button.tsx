@@ -1,6 +1,7 @@
 import { forwardRef } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
+import { Skeleton } from 'shared/ui/Skeleton';
 
 import cls from './Button.module.scss';
 import type { ButtonProps } from './Button.type';
@@ -27,6 +28,8 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       [cls.disabled]: disabled,
       [cls.active]: active,
     };
+
+    if (loading) return <Skeleton variant="rounded" size="small" />;
 
     return (
       <button

@@ -4,15 +4,8 @@ import { Card } from 'shared/ui/Card';
 import { Icon } from 'shared/ui/Icon';
 
 import cls from './SmallProfile.module.scss';
+import { SmallProfileProps } from './SmallProfile.type';
 
-interface SmallProfileProps {
-  nickname: string;
-  lvl: number;
-  className?: string;
-  profileLink: string;
-}
-
-// TODO change button to AppLink
 // TODO add more styles
 
 export const SmallProfile = ({

@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Button } from 'shared/ui/Button';
+import { AppLink } from 'shared/ui/AppLink';
 import { Card } from 'shared/ui/Card';
 import { Icon } from 'shared/ui/Icon';
 
@@ -9,6 +9,7 @@ interface SmallProfileProps {
   nickname: string;
   lvl: number;
   className?: string;
+  profileLink: string;
 }
 
 // TODO change button to AppLink
@@ -18,16 +19,17 @@ export const SmallProfile = ({
   lvl,
   nickname,
   className,
+  profileLink,
 }: SmallProfileProps) => {
   return (
     <div className={classNames(cls.profileContainer, {}, [className])}>
-      <Button className={cls.profile} theme="clear">
+      <AppLink to={profileLink} className={cls.profile} theme="clear">
         <Icon className={cls.profileIcon} type="profile" />
         <span className={cls.profileNickname}>{nickname}</span>
         <Card className={cls.profileLvlCard} theme="primary" size="small">
           <span>{lvl}</span>
         </Card>
-      </Button>
+      </AppLink>
     </div>
   );
 };

@@ -18,17 +18,20 @@ export const HeaderActions = memo(({ className }: HeaderActionsProps) => {
     return <Button>Log in</Button>;
   }
 
+  const logout = () => {
+    console.log('logout');
+  };
+
   return (
     <div className={classNames(cls.headerActions, {}, [className])}>
-      <SmallProfile nickname="alcorbbx" lvl={93} />
-      {/* <div className={cls.headerActionsRight}> */}
+      <SmallProfile profileLink="/" nickname="alcorbbx" lvl={93} />
+
       <Button theme="clear" square size="s">
         <Icon type="bell" />
       </Button>
-      <Button theme="clear" square size="s">
+      <Button onClick={logout} theme="clear" square size="s">
         <Icon type="exit" />
       </Button>
-      {/* </div> */}
     </div>
   );
 });

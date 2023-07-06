@@ -20,7 +20,11 @@ export const SmallProfile = ({
 
   return (
     <div className={classNames(cls.profileContainer, {}, [className])}>
-      <AppLink to={profileLink} className={cls.profile} theme="clear">
+      <AppLink
+        to={`/profile/${profileLink}`}
+        className={cls.profile}
+        theme="clear"
+      >
         <Icon className={cls.profileIcon} type="profile" />
         <span className={cls.profileNickname}>{nickname}</span>
         <Card className={cls.profileLvlCard} theme="primary" size="small">

@@ -2,7 +2,7 @@ import { memo, useState } from 'react';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
-import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
+import { LangSwitcher } from 'shared/ui/LangSwitcher';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher';
 
 import { SidebarItemList } from '../../model/items';

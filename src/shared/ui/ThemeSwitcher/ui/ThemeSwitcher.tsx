@@ -4,9 +4,7 @@ import { theme } from 'shared/lib/theme/ThemeContext';
 import { useTheme } from 'shared/lib/theme/useTheme';
 import { Select } from 'shared/ui/Select';
 
-interface ThemeSwitcherProps {
-  className?: string;
-}
+import { ThemeSwitcherProps } from './ThemeSwitcher.type';
 
 export const ThemeSwitcher = memo(({ className }: ThemeSwitcherProps) => {
   const { changeTheme } = useTheme();

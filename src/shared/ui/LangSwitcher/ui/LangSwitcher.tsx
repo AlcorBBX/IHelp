@@ -4,9 +4,7 @@ import { useI18N } from '@ayub-begimkulov/i18n';
 
 import { Select } from 'shared/ui/Select';
 
-interface LangSwitcherProps {
-  className?: string;
-}
+import { LangSwitcherProps } from './LangSwitcher.type';
 
 const langs = [
   { value: 'en', title: 'en' },

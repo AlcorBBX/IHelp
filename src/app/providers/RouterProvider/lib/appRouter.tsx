@@ -8,6 +8,8 @@ import { NotFoundPage } from 'pages/NotFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
 import { SettingsPage } from 'pages/SettingsPage';
 
+import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
+
 // import { appStore } from './appStore';
 
 export const appRouter = createBrowserRouter([
@@ -15,7 +17,7 @@ export const appRouter = createBrowserRouter([
     element: baseLayout,
     // errorElement: <div>error</div>,
     loader: async () => {
-      return 'loading';
+      return <PageLoader />;
     },
     // loader: async () => {
     //   return await featureToggleLoader(appStore.dispatch);

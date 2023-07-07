@@ -18,7 +18,7 @@ export const theme = [
   { title: 'dark', value: 'dark' },
 ];
 export const themesEntries = Object.entries(themes);
-// export type ThemesType = ReturnType<typeof themes>
+export type Theme = typeof themes;
 
 export interface ThemeContextProps {
   theme?: typeof themes;

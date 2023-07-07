@@ -4,10 +4,13 @@ import {
   LOCAL_STORAGE_THEME_KEY,
   Theme,
   ThemeContext, // themes,
+  themes,
 } from 'shared/lib/theme/ThemeContext';
 
+// TODO FIX ts-ignore
 const defaultTheme =
-  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.STEALTH;
+  // @ts-ignore
+  (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || themes.stealth;
 
 interface ThemeProviderProps {
   children?: ReactNode;
@@ -28,9 +31,11 @@ export const ThemeProvider: FC<ThemeProviderProps> = ({
     [theme],
   );
 
+  // TODO FIX ts-ignore
   useLayoutEffect(() => {
     const datasetTheme = document.documentElement.dataset.theme;
     if (!datasetTheme) {
+      // @ts-ignore
       document.documentElement.dataset.theme = defaultTheme;
     }
     // console.log(document.documentElement.dataset.theme);

@@ -11,7 +11,9 @@ interface FormProps {
   closeEyeClick?(): void;
   onChangePassword?: (value: string) => void;
   onChangeEmail?: (value: string) => void;
+  onChangeNickname?: (value: string) => void;
   email: string;
+  nickname?: string;
   password: string;
   isLoading?: boolean;
 }
@@ -22,7 +24,9 @@ export const Form = ({
   closeEyeClick,
   onChangeEmail,
   onChangePassword,
+  onChangeNickname,
   email,
+  nickname,
   password,
   isLoading,
 }: FormProps) => {
@@ -37,13 +41,23 @@ export const Form = ({
         className={cls.input}
         placeholder={t('Write nickname')}
         autoFocus
+        onChange={onChangeNickname}
+        value={nickname}
+        onClick={openEyeClick}
+      />
+      <Input
+        theme="background"
+        type="text"
+        label={t('Email')}
+        className={cls.input}
+        placeholder={t('Write email')}
         onChange={onChangeEmail}
         value={email}
         onClick={openEyeClick}
       />
       <Input
         theme="background"
-        type="text"
+        type="password"
         label={t('Password')}
         className={cls.input}
         placeholder={t('Write password')}
@@ -60,7 +74,7 @@ export const Form = ({
           {t('Sign up')}
         </Button>
         <Button
-          theme="background"
+          theme="outlinedDanger"
           onClick={() => handleClick(email, password)}
           className={cls.loginBtn}
           disabled={isLoading}

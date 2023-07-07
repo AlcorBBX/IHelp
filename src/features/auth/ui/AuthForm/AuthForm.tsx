@@ -89,7 +89,13 @@ export const AuthForm = ({ className }: LoginFormProps) => {
       <Face ref={imgref} />
       <div className={cls.authActionsWrapper}>
         <Button onClick={signInWithGoogle} theme="outlinedDanger">
+          GitHub Auth
+        </Button>
+        <Button onClick={signInWithGoogle} theme="outlinedDanger">
           Google Auth
+        </Button>
+        <Button onClick={signInWithGoogle} theme="outlinedDanger">
+          Facebook Auth
         </Button>
       </div>
       <Form

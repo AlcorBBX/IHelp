@@ -4,24 +4,40 @@ import monkey from 'shared/assets/monkey/monkey.gif';
 import monkeyeyesclosed from 'shared/assets/monkey/monkeyclosedeye.gif';
 import {
   logInWithEmailAndPassword,
+  registerWithEmailAndPassword,
   signInWithGoogle,
 } from 'shared/lib/Firebase';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from 'shared/ui/Button';
 
 import { Face } from '../Face/Face';
-import { Form } from './Form';
-import cls from './LoginForm.module.scss';
+import cls from './AuthForm.module.scss';
+import { Form, type handleClickProps } from './Form';
 
 export interface LoginFormProps {
   className?: string;
 }
 
-export const LoginForm = ({ className }: LoginFormProps) => {
+export const AuthForm = ({ className }: LoginFormProps) => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
+  const [name, setName] = useState<string>('');
+
+  const [isLogin, setIsLogin] = useState<boolean>(true);
   // const { username, password, isLoading, error } =
   //   useAppSelector(getLoginState);
+  //
+  const onChangeIsLogin = useCallback(() => {
+    setIsLogin(() => !isLogin);
+  }, [isLogin]);
+
+  const onChangeName = useCallback(
+    (value: string) => {
+      setName(value);
+      // dispatch(loginActions.setUserName(value));
+    },
+    [email],
+  );
 
   const onChangeEmail = useCallback(
     (value: string) => {
@@ -58,9 +74,18 @@ export const LoginForm = ({ className }: LoginFormProps) => {
     }
   }
 
+  const handleClick = ({ name, email, password }: handleClickProps) => {
+    if (isLogin) {
+      logInWithEmailAndPassword(email, password);
+    } else {
+      if (!name) return;
+      registerWithEmailAndPassword(name, email, password);
+    }
+  };
+
   return (
     <div className={classNames(cls.loginForm, {}, [className])}>
-      <h2>Log in</h2>
+      <h2>{isLogin ? 'Log in' : 'Sign up'}</h2>
       <Face ref={imgref} />
       <div className={cls.authActionsWrapper}>
         <Button onClick={signInWithGoogle} theme="outlinedDanger">
@@ -68,14 +93,18 @@ export const LoginForm = ({ className }: LoginFormProps) => {
         </Button>
       </div>
       <Form
-        handleClick={logInWithEmailAndPassword}
-        openEyeClick={openeye}
-        closeEyeClick={closeye}
-        onChangeEmail={onChangeEmail}
-        onChangePassword={onChangePassword}
+        name={name}
         email={email}
         password={password}
-        // isLoading={isLoading}
+        isLogin={isLogin}
+        handleClick={handleClick}
+        onChangeName={onChangeName}
+        onChangeEmail={onChangeEmail}
+        onChangePassword={onChangePassword}
+        onChangeIsLogin={onChangeIsLogin}
+        openEyeClick={openeye}
+        closeEyeClick={closeye}
+        // isLoading={isL}
       />
     </div>
   );

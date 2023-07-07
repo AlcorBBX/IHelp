@@ -5,17 +5,25 @@ import { Input } from 'shared/ui/Input';
 
 import cls from './Form.module.scss';
 
+export type handleClickProps = {
+  name?: string;
+  email: string;
+  password: string;
+};
+
 interface FormProps {
-  handleClick: (email: string, password: string) => void;
+  handleClick: (args: handleClickProps) => void;
   openEyeClick?(): void;
   closeEyeClick?(): void;
   onChangePassword?: (value: string) => void;
   onChangeEmail?: (value: string) => void;
-  onChangeNickname?: (value: string) => void;
+  onChangeName?: (value: string) => void;
+  onChangeIsLogin(): void;
   email: string;
-  nickname?: string;
+  name: string;
   password: string;
   isLoading?: boolean;
+  isLogin: boolean;
 }
 
 export const Form = ({
@@ -24,9 +32,11 @@ export const Form = ({
   closeEyeClick,
   onChangeEmail,
   onChangePassword,
-  onChangeNickname,
+  onChangeName,
+  onChangeIsLogin,
   email,
-  nickname,
+  isLogin,
+  name,
   password,
   isLoading,
 }: FormProps) => {
@@ -34,20 +44,22 @@ export const Form = ({
 
   return (
     <form>
+      {!isLogin && (
+        <Input
+          theme="background"
+          type="text"
+          label={t('Nickname')}
+          className={cls.input}
+          placeholder={t('Write nickname')}
+          autoFocus
+          onChange={onChangeName}
+          value={name}
+          onClick={openEyeClick}
+        />
+      )}
       <Input
         theme="background"
-        type="text"
-        label={t('Nickname')}
-        className={cls.input}
-        placeholder={t('Write nickname')}
-        autoFocus
-        onChange={onChangeNickname}
-        value={nickname}
-        onClick={openEyeClick}
-      />
-      <Input
-        theme="background"
-        type="text"
+        type="email"
         label={t('Email')}
         className={cls.input}
         placeholder={t('Write email')}
@@ -67,19 +79,22 @@ export const Form = ({
       />
       <div className={cls.actionsWrapper}>
         <Button
+          type="button"
+          onClick={() => onChangeIsLogin()}
           theme="background"
           className={cls.loginBtn}
           disabled={isLoading}
         >
-          {t('Sign up')}
+          {isLogin ? t('Sign up') : t('Log in')}
         </Button>
         <Button
+          type="submit"
           theme="outlinedDanger"
-          onClick={() => handleClick(email, password)}
+          onClick={() => handleClick({ name, email, password })}
           className={cls.loginBtn}
           disabled={isLoading}
         >
-          {t('Log in')}
+          {isLogin ? t('Log in') : t('SIgn up')}
         </Button>
       </div>
     </form>

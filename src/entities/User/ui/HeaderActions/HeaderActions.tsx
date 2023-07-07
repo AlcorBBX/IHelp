@@ -3,7 +3,7 @@ import { memo, useCallback, useEffect, useLayoutEffect, useState } from 'react';
 import { collection, getDocs, query, where } from 'firebase/firestore';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
-import { LoginForm } from 'features/auth';
+import { AuthForm } from 'features/auth';
 
 import { auth, db, logout } from 'shared/lib/Firebase';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -41,7 +41,7 @@ export const HeaderActions = memo(({ className }: HeaderActionsProps) => {
       </Button>
       {isAuthModal && (
         <Modal isOpen={isAuthModal} onClose={onCloseModal}>
-          <LoginForm />
+          <AuthForm />
         </Modal>
       )}
     </div>

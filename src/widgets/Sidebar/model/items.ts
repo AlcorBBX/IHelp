@@ -1,34 +1,31 @@
-import React from 'react';
-
-// import AboutIcon from 'shared/assets/icons/about-20-20.svg';
-// import MainIcon from 'shared/assets/icons/main-20-20.svg';
-// import ProfileIcon from 'shared/assets/icons/profile-20-20.svg';
+import { IconType } from 'shared/ui/Icon/ui/Icon.type';
 
 export interface SidebarItemType {
   path: string;
   text: string;
-  Icon?: React.VFC<React.SVGProps<SVGSVGElement>>;
+  icon: IconType;
+  // Icon?: React.VFC<React.SVGProps<SVGSVGElement>>;
 }
 
 export const SidebarItemList: SidebarItemType[] = [
   {
     path: '/',
-    // Icon: MainIcon,
     text: 'Main page',
+    icon: 'bell',
   },
   {
     path: '/about',
-    // Icon: AboutIcon,
     text: 'About',
+    icon: 'bell',
   },
   {
     path: '/profile',
-    // Icon: ProfileIcon,
     text: 'Profile',
+    icon: 'bell',
   },
   {
     path: '/settings',
-    // Icon: ProfileIcon,
     text: 'Settings',
+    icon: 'bell',
   },
 ];

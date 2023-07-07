@@ -4,6 +4,7 @@ import { useTranslate } from '@ayub-begimkulov/i18n';
 
 import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink';
+import { Icon } from 'shared/ui/Icon';
 
 import { SidebarItemType } from '../../model/items';
 import cls from './SidebarItem.module.scss';
@@ -22,6 +23,7 @@ export const SidebarItem = memo(
         to={item.path}
         className={classNames(cls.item, { [cls.collapsed]: collapsed })}
       >
+        <Icon type={item.icon} />
         {/* <item.Icon className={cls.icon} /> */}
         {/* <span className={cls.link}>{item.text}</span> */}
         <span className={cls.link}>{t(item.text)}</span>

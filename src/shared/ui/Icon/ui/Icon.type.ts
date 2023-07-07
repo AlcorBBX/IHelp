@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react';
 
 type IconTheme = 'invert' | 'primary';
 
-type IconType =
+export type IconType =
   | 'arrow-down'
   | 'bell'
   | 'magnifier'

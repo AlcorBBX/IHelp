@@ -1,5 +1,12 @@
 {
   "Main page": "Главная страница",
   "Log in": "Войти",
-  "Not found page": "Страница не найдена"
+  "Not found page": "Страница не найдена",
+  "Sign up": "Зарегистрироваться",
+  "Nickname": "Никнейм",
+  "Email": "Почта",
+  "Password": "Пароль",
+  "Write nickname": "Напиши никнейм",
+  "Write email": "Напиши почту",
+  "Write password": "Напиши пароль"
 }

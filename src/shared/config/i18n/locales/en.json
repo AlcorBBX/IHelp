@@ -1,5 +1,12 @@
 {
   "Main page": "Main page",
   "Log in": "Log in",
-  "Not found page": "Not found page"
+  "Sign up": "Sign up",
+  "Not found page": "Not found page",
+  "Nickname": "Nickname",
+  "Email": "Email",
+  "Password": "Password",
+  "Write nickname": "Write nickname",
+  "Write email": "Write email",
+  "Write password": "Write password"
 }

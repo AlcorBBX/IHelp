@@ -1,14 +1,11 @@
 import type { ButtonHTMLAttributes, MouseEvent } from 'react';
 
-type ButtonTheme =
-  | 'primary'
-  | 'background'
-  | 'outlinedDanger'
-  | 'outline'
-  | 'clear'
-  | 'clearInverted';
+import { SizeVariant } from 'shared/types/sizeVariant';
+import { ThemeVariant } from 'shared/types/themeVariant';
 
-type ButtonSize = 'xs' | 's' | 'm' | 'l' | 'xl';
+type ButtonTheme = ThemeVariant;
+
+type ButtonSize = SizeVariant;
 
 type HtmlButtonProps = Omit<
   ButtonHTMLAttributes<HTMLButtonElement>,

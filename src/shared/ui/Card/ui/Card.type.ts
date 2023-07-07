@@ -1,14 +1,11 @@
 import type { CSSProperties, HTMLAttributes, ReactNode } from 'react';
 
-type CardTheme =
-  | 'primary'
-  | 'background'
-  | 'outlinedDanger'
-  | 'outline'
-  | 'clear'
-  | 'clearInverted';
+import { SizeVariant } from 'shared/types/sizeVariant';
+import { ThemeVariant } from 'shared/types/themeVariant';
 
-type CardSize = 'default' | 'small';
+type CardTheme = ThemeVariant;
+
+type CardSize = SizeVariant;
 
 interface CardTabListType {
   key: string;

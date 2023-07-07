@@ -1,14 +1,11 @@
 import { LinkProps } from 'react-router-dom';
 
-type AppLinkTheme =
-  | 'primary'
-  | 'background'
-  | 'outlinedDanger'
-  | 'outline'
-  | 'clear'
-  | 'clearInverted';
+import { SizeVariant } from 'shared/types/sizeVariant';
+import { ThemeVariant } from 'shared/types/themeVariant';
 
-type AppLinkSize = 'xs' | 's' | 'm' | 'l' | 'xl';
+type AppLinkTheme = ThemeVariant;
+
+type AppLinkSize = SizeVariant;
 
 type ReactRouterDomLinkProps = Omit<LinkProps, 'className'>;
 

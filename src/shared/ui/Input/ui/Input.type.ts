@@ -1,26 +1,13 @@
 import { InputHTMLAttributes } from 'react';
 
+import { ThemeVariant } from 'shared/types/themeVariant';
+
 type HtmlInputProps = Omit<
   InputHTMLAttributes<HTMLInputElement>,
   'value' | 'onChange'
 >;
 
-// type InputTheme =
-//   | 'clear'
-//   | 'outline'
-//   | 'outlinedDanger'
-//   | 'clearInverted'
-//   | 'background'
-//   | 'backgroundInverted'
-//   | 'inverted';
-
-type InputTheme =
-  | 'primary'
-  | 'background'
-  | 'outlinedDanger'
-  | 'outline'
-  | 'clear'
-  | 'clearInverted';
+type InputTheme = ThemeVariant;
 
 export interface InputProps extends HtmlInputProps {
   className?: string;

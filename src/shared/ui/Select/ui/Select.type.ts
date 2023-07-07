@@ -1,6 +1,8 @@
+import { ThemeVariant } from 'shared/types/themeVariant';
+
 import { Option } from './Option/Option.type';
 
-export type SelectTheme = 'primary' | 'background';
+export type SelectTheme = ThemeVariant;
 
 export interface SelectProps {
   theme?: SelectTheme;

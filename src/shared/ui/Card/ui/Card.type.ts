@@ -16,27 +16,27 @@ interface CardTabListType {
 type HtmlDivProps = Omit<HTMLAttributes<HTMLDivElement>, 'title'>;
 
 export interface CardProps extends HtmlDivProps {
-  className?: string; // +
-  children?: ReactNode; // +
-  prefixCls?: string; // -+
-  title?: ReactNode; // +
-  extra?: ReactNode; // +
-  // bordered?: boolean; // +
-  headStyle?: CSSProperties; // +
-  bodyStyle?: CSSProperties; // +
+  className?: string;
+  children?: ReactNode;
+  prefixCls?: string;
+  title?: ReactNode;
+  extra?: ReactNode;
+  // bordered?: boolean;
+  headStyle?: CSSProperties;
+  bodyStyle?: CSSProperties;
   style?: CSSProperties;
-  loading?: boolean; // +
-  // hoverable?: boolean; // +
+  loading?: boolean;
+  // hoverable?: boolean;
   // id?: string;
-  size?: CardSize; // +
-  theme?: CardTheme; // +
-  cover?: ReactNode; // +
-  actions?: ReactNode[]; // +
-  tabList?: CardTabListType[]; // +
-  tabBarExtraContent?: ReactNode; // +
+  size?: CardSize;
+  theme?: CardTheme;
+  cover?: ReactNode;
+  actions?: ReactNode[];
+  tabList?: CardTabListType[];
+  tabBarExtraContent?: ReactNode;
   onTabChange?: (key: string) => void;
-  activeTabKey?: string; // +
-  defaultActiveTabKey?: string; // +
+  activeTabKey?: string;
+  defaultActiveTabKey?: string;
   // tabProps?: TabsProps;
 }
 

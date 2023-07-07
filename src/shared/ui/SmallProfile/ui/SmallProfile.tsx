@@ -27,7 +27,7 @@ export const SmallProfile = ({
       >
         <Icon className={cls.profileIcon} type="profile" />
         <span className={cls.profileNickname}>{nickname}</span>
-        <Card className={cls.profileLvlCard} theme="primary" size="small">
+        <Card className={cls.profileLvlCard} theme="primary" size="s">
           <span>{lvl}</span>
         </Card>
       </AppLink>

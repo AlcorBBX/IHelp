@@ -14,11 +14,11 @@ export default {
 
 const DefaultTemplate: StoryFn<CardProps> = (args) => (
   <div>
-    <Card size="default" theme="primary" {...args}>
+    <Card theme="primary" {...args}>
       <div>Card's background inverted</div>
     </Card>
 
-    <Card size="default" theme="background" {...args}>
+    <Card theme="background" {...args}>
       <div>Card's background</div>
     </Card>
   </div>
@@ -44,7 +44,6 @@ const FullTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
       {...args}
     >
       <div>Card's background</div>
@@ -92,7 +91,6 @@ const ThemesTemplate: StoryFn<CardProps> = (args) => (
             </Button>,
           ],
         ]}
-        size="default"
         theme="background"
         {...args}
       >
@@ -116,7 +114,6 @@ const ThemesTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
       theme="clear"
       {...args}
     >
@@ -139,7 +136,6 @@ const ThemesTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
       theme="clearInverted"
       {...args}
     >
@@ -162,7 +158,6 @@ const ThemesTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
       theme="outline"
       {...args}
     >
@@ -184,7 +179,6 @@ const ThemesTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
       theme="outlinedDanger"
       {...args}
     >
@@ -213,7 +207,6 @@ const BigTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
       {...args}
     >
       <div>
@@ -254,7 +247,7 @@ const LoadingTemplate: StoryFn<CardProps> = (args) => (
           </Button>,
         ],
       ]}
-      size="default"
+      size="m"
       {...args}
     >
       <div>Card's background</div>

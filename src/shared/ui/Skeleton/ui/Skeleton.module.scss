@@ -1,6 +1,6 @@
 $animation-duration: 1.9s;
 
-@mixin background-gradient {
+@mixin primary-gradient {
   background-image: linear-gradient(
     90deg,
     var(--sub-alt-color) 0px,
@@ -10,10 +10,42 @@ $animation-duration: 1.9s;
   background-size: 700px;
 }
 
+@mixin background-gradient {
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-color) 0px,
+    var(--sub-color) 40px,
+    var(--bg-color) 80px
+  );
+  background-size: 700px;
+}
+
 .root {
   width: 150px;
   height: 50px;
-  background: var(--sub-alt-color);
+
+  &.primary {
+    background: var(--sub-alt-color);
+    &.wave {
+      @include primary-gradient;
+      animation: wave-frame $animation-duration infinite linear;
+    }
+    &.pulse {
+      @include primary-gradient;
+      animation: primary-pulse-frame $animation-duration infinite alternate;
+    }
+  }
+  &.background {
+    background: var(--bg-color);
+    &.wave {
+      @include background-gradient;
+      animation: wave-frame $animation-duration infinite linear;
+    }
+    &.pulse {
+      @include background-gradient;
+      animation: background-pulse-frame $animation-duration infinite alternate;
+    }
+  }
 }
 
 .default {
@@ -100,30 +132,28 @@ $animation-duration: 1.9s;
   height: 105px;
 }
 
-.wave {
-  @include background-gradient;
-  animation: wave-frame $animation-duration infinite linear;
-}
-
-.pulse {
-  @include background-gradient;
-  animation: pulse-frame $animation-duration infinite alternate;
-}
-
 @keyframes wave-frame {
   0% {
     background-position: -100px;
   }
-
   40%,
   100% {
     background-position: 360px;
   }
 }
 
-@keyframes pulse-frame {
+@keyframes primary-pulse-frame {
   from {
     background: var(--sub-alt-color);
+  }
+  to {
+    background: var(--sub-color);
+  }
+}
+
+@keyframes background-pulse-frame {
+  from {
+    background: var(--bg-color);
   }
   to {
     background: var(--sub-color);

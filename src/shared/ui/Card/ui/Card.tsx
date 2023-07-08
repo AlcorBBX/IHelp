@@ -36,7 +36,12 @@ export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
     ...others
   } = props;
 
-  const loadingBlock = <Skeleton variant="rounded" />;
+  const loadingBlock = (
+    <Skeleton
+      theme={theme === 'primary' ? 'background' : 'primary'}
+      variant="rounded"
+    />
+  );
 
   let head: ReactNode;
   if (title || extra) {

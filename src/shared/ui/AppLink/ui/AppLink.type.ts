@@ -1,7 +1,6 @@
 import { LinkProps } from 'react-router-dom';
 
-import { SizeVariant } from 'shared/types/sizeVariant';
-import { ThemeVariant } from 'shared/types/themeVariant';
+import { SizeVariant, ThemeVariant } from 'shared/types';
 
 type AppLinkTheme = ThemeVariant;
 

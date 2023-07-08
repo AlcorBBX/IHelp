@@ -1,7 +1,6 @@
 import type { ButtonHTMLAttributes, MouseEvent } from 'react';
 
-import { SizeVariant } from 'shared/types/sizeVariant';
-import { ThemeVariant } from 'shared/types/themeVariant';
+import { SizeVariant, ThemeVariant } from 'shared/types';
 
 type ButtonTheme = ThemeVariant;
 

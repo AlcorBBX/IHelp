@@ -1,4 +1,4 @@
-import { ThemeVariant } from 'shared/types/themeVariant';
+import { ThemeVariant } from 'shared/types';
 
 import { Option } from './Option/Option.type';
 

@@ -98,17 +98,17 @@ export const Animation = AnimationTemplate.bind({});
 const ThemeTemplate: StoryFn<SkeletonProps> = (args) => (
   <div>
     <p>Theme primary</p>
-    <Skeleton {...args} theme="primary" />
-    <span style={{ margin: '16px' }} />
-    <p>Theme background</p>
     <div
       style={{
         padding: '5px',
         background: 'var(--sub-alt-color)',
       }}
     >
-      <Skeleton {...args} theme="background" />
+      <Skeleton {...args} theme="primary" />
     </div>
+    <span style={{ margin: '16px' }} />
+    <p>Theme background</p>
+    <Skeleton {...args} theme="background" />
   </div>
 );
 export const Theme = ThemeTemplate.bind({});

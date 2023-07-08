@@ -5,6 +5,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Skeleton.module.scss';
 import { SkeletonProps } from './Skeleton.type';
 
+// TODO change size and theme to ThemeVariant. SizeVariant (shared/types)
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   (props, ref) => {
     const {

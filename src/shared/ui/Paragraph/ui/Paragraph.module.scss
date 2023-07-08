@@ -1,0 +1,10 @@
+@import '../../../styles/mixins/mixins.scss';
+
+@include respond(phone) {
+  .paragraph {
+    /* font-size: px; */
+  }
+}
+
+.paragraph {
+}

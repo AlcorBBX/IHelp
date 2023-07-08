@@ -9,15 +9,3 @@ interface PortalProps {
 
 export const Portal = ({ element = document.body, children }: PortalProps) =>
   createPortal(children, element);
-
-const modalRoot = document.getElementById('modal-root')!;
-
-export function PortalModal({ children }: { children: ReactNode }) {
-  return createPortal(children, modalRoot);
-}
-
-const tooltipRoot = document.getElementById('tooltip-root')!;
-
-export function PortalTooltip({ children }: { children: ReactNode }) {
-  return createPortal(children, tooltipRoot);
-}

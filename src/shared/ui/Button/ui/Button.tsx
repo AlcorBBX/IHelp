@@ -29,7 +29,9 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       [cls.active]: active,
     };
 
-    if (loading) return <Skeleton variant="rounded" size="small" />;
+    if (loading) {
+      return <Skeleton theme={theme} variant="rounded" size="small" />;
+    }
 
     return (
       <button

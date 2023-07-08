@@ -1,8 +1,4 @@
-import { HTMLAttributes } from 'react';
-
 import { ThemeVariant } from 'shared/types';
-
-type HtmlDivProps = Omit<HTMLAttributes<HTMLDivElement>, 'title'>;
 
 type SkeletonSize = 'small' | 'default' | 'large';
 
@@ -12,7 +8,7 @@ type SkeletonAnimation = 'wave' | 'pulse';
 
 type SkeletonTheme = ThemeVariant;
 
-export interface SkeletonProps extends HtmlDivProps {
+export interface SkeletonProps {
   className?: string;
   size?: SkeletonSize;
   variant?: SkeletonVariant;

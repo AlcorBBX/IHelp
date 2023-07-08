@@ -12,7 +12,7 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
       size = 'default',
       variant = 'text',
       animation = 'wave',
-      theme = 'primary',
+      theme = 'background',
       ...otherProps
     } = props;
 

@@ -3,9 +3,9 @@ $animation-duration: 1.9s;
 @mixin primary-gradient {
   background-image: linear-gradient(
     90deg,
-    var(--sub-alt-color) 0px,
+    var(--bg-color) 0px,
     var(--sub-color) 40px,
-    var(--sub-alt-color) 80px
+    var(--bg-color) 80px
   );
   background-size: 700px;
 }
@@ -13,9 +13,9 @@ $animation-duration: 1.9s;
 @mixin background-gradient {
   background-image: linear-gradient(
     90deg,
-    var(--bg-color) 0px,
+    var(--sub-alt-color) 0px,
     var(--sub-color) 40px,
-    var(--bg-color) 80px
+    var(--sub-alt-color) 80px
   );
   background-size: 700px;
 }
@@ -25,7 +25,7 @@ $animation-duration: 1.9s;
   height: 50px;
 
   &.primary {
-    background: var(--sub-alt-color);
+    background: var(--bg-color);
     &.wave {
       @include primary-gradient;
       animation: wave-frame $animation-duration infinite linear;
@@ -36,7 +36,7 @@ $animation-duration: 1.9s;
     }
   }
   &.background {
-    background: var(--bg-color);
+    background: var(--sub-alt-color);
     &.wave {
       @include background-gradient;
       animation: wave-frame $animation-duration infinite linear;

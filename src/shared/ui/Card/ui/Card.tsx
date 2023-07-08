@@ -36,7 +36,7 @@ export const Card = forwardRef<HTMLDivElement, CardProps>((props, ref) => {
     ...others
   } = props;
 
-  const loadingBlock = <Skeleton theme={theme} variant="rounded" />;
+  const loadingBlock = <Skeleton variant="rounded" />;
 
   let head: ReactNode;
   if (title || extra) {

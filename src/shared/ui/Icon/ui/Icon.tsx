@@ -13,7 +13,10 @@ export const Icon = ({
     [cls[theme]]: true,
   };
   return (
-    <div className={classNames(cls.root, mods, [className])} onClick={onClick}>
+    <div
+      className={classNames(cls.iconContainer, mods, [className])}
+      onClick={onClick}
+    >
       <div
         className={cls.icon}
         style={{

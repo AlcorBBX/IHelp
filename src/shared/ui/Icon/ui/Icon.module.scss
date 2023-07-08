@@ -1,7 +1,28 @@
-.root {
+@import '../../../styles/mixins/mixins.scss';
+
+@include respond(phone) {
+  .iconContainer {
+    height: 12px !important;
+    width: 10px !important;
+  }
+}
+
+@include respond(tab-port) {
+  .iconContainer {
+    height: 17px !important;
+    width: 15px !important;
+  }
+}
+
+@include respond(desktop) {
+  .iconContainer {
+    height: 22px !important;
+    width: 20px !important;
+  }
+}
+
+.iconContainer {
   position: relative;
-  height: 26px;
-  width: 24px;
 
   &_clickable {
     cursor: pointer;

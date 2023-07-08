@@ -5,7 +5,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './Skeleton.module.scss';
 import { SkeletonProps } from './Skeleton.type';
 
-// TODO change size and theme to ThemeVariant. SizeVariant (shared/types)
 export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
   (props, ref) => {
     const {
@@ -18,15 +17,14 @@ export const Skeleton = forwardRef<HTMLDivElement, SkeletonProps>(
     } = props;
 
     const mods = {
-      [cls[theme]]: true,
-      [cls[size]]: true,
-      [cls[variant]]: true,
-      [cls[animation]]: true,
+      [cls[size]]: size,
+      [cls[variant]]: variant,
+      [cls[animation]]: animation,
     };
 
     return (
       <div
-        className={classNames(cls.root, mods, [className])}
+        className={classNames(cls.skeleton, mods, [className, cls[theme]])}
         ref={ref}
         {...otherProps}
       >

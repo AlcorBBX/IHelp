@@ -3,16 +3,6 @@ $animation-duration: 1.9s;
 @mixin primary-gradient {
   background-image: linear-gradient(
     90deg,
-    var(--bg-color) 0px,
-    var(--sub-color) 40px,
-    var(--bg-color) 80px
-  );
-  background-size: 700px;
-}
-
-@mixin background-gradient {
-  background-image: linear-gradient(
-    90deg,
     var(--sub-alt-color) 0px,
     var(--sub-color) 40px,
     var(--sub-alt-color) 80px
@@ -20,31 +10,46 @@ $animation-duration: 1.9s;
   background-size: 700px;
 }
 
-.root {
+@mixin background-gradient {
+  background-image: linear-gradient(
+    90deg,
+    var(--bg-color) 0px,
+    var(--sub-color) 40px,
+    var(--bg-color) 80px
+  );
+  background-size: 700px;
+}
+
+.skeleton {
   width: 150px;
   height: 50px;
+}
 
-  &.primary {
-    background: var(--bg-color);
-    &.wave {
-      @include primary-gradient;
-      animation: wave-frame $animation-duration infinite linear;
-    }
-    &.pulse {
-      @include primary-gradient;
-      animation: primary-pulse-frame $animation-duration infinite alternate;
-    }
+.primary,
+.outline,
+.outlinedDanger,
+.clear,
+.clearInverted {
+  background: var(--sub-alt-color);
+  &.wave {
+    @include primary-gradient;
+    animation: wave-frame $animation-duration infinite linear;
   }
-  &.background {
-    background: var(--sub-alt-color);
-    &.wave {
-      @include background-gradient;
-      animation: wave-frame $animation-duration infinite linear;
-    }
-    &.pulse {
-      @include background-gradient;
-      animation: background-pulse-frame $animation-duration infinite alternate;
-    }
+  &.pulse {
+    @include primary-gradient;
+    animation: primary-pulse-frame $animation-duration infinite alternate;
+  }
+}
+
+.background {
+  background: var(--bg-color);
+  &.wave {
+    @include background-gradient;
+    animation: wave-frame $animation-duration infinite linear;
+  }
+  &.pulse {
+    @include background-gradient;
+    animation: background-pulse-frame $animation-duration infinite alternate;
   }
 }
 

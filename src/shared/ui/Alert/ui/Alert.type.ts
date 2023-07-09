@@ -1,3 +1,5 @@
+import { IconType } from 'shared/ui/Icon';
+
 type AlertType = 'success' | 'warning' | 'error' | 'default';
 
 export interface AlertProps {
@@ -5,4 +7,5 @@ export interface AlertProps {
   type?: AlertType;
   message: string;
   title?: string;
+  icon?: IconType | false;
 }

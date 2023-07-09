@@ -8,7 +8,7 @@ import cls from './Alert.module.scss';
 import { AlertProps } from './Alert.type';
 
 export const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
-  const { className, message, title, type = 'default' } = props;
+  const { className, icon = false, message, title, type = 'default' } = props;
 
   const mods = {
     [cls[type]]: type,
@@ -18,7 +18,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   return (
     <Portal>
       <div ref={ref} className={classNames(cls.alert, mods, [className])}>
-        <Icon type="profile" />
+        {icon ? <Icon type={icon} /> : null}
         <div>
           {title ? <p className={cls.title}>{title}</p> : null}
           <p className={cls.message}>{message}</p>

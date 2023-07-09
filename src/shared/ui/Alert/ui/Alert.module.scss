@@ -1,6 +1,20 @@
 .alert {
+  display: flex;
+  column-gap: 15px;
+  position: absolute;
+  top: 35px;
+  right: 25px;
+  padding: 10px;
+  border-radius: 15px;
+  &.default {
+    background: var(--sub-color);
+  }
 }
 .title {
+  font-size: var(--font-size-l);
+  font-weight: bold;
 }
 .message {
+  max-width: 320px;
+  opacity: 0.7;
 }

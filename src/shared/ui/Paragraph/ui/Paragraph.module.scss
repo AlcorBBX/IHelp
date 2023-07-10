@@ -1,10 +1,37 @@
 @import '../../../styles/mixins/mixins.scss';
 
+.paragraph {
+  font-size: var(--font-size-m);
+}
+
+@include respond(small-phone) {
+  .paragraph {
+    font-size: var(--font-size-s);
+  }
+}
 @include respond(phone) {
   .paragraph {
-    /* font-size: px; */
+    font-size: var(--font-size-s);
   }
 }
 
-.paragraph {
+@include respond(tab-port) {
+  .paragraph {
+    font-size: var(--font-size-m);
+  }
+}
+@include respond(tab-land) {
+  .paragraph {
+    font-size: var(--font-size-l);
+  }
+}
+@include respond(desktop) {
+  .paragraph {
+    font-size: var(--font-size-m);
+  }
+}
+@include respond(big-desktop) {
+  .paragraph {
+    font-size: var(--font-size-xl);
+  }
 }

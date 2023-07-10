@@ -8,4 +8,6 @@ export interface AlertProps {
   message: string;
   title?: string;
   icon?: IconType | false;
+  isOpen?: boolean;
+  onClose?: () => void;
 }

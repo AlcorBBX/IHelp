@@ -33,9 +33,9 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
   return (
     <Portal>
       <div ref={ref} className={classNames(cls.alert, mods, [className])}>
-        {icon ? <Icon type={icon} /> : null}
+        {icon && <Icon type={icon} />}
         <div>
-          {title ? <p className={cls.title}>{title}</p> : null}
+          {title && <p className={cls.title}>{title}</p>}
           <p className={cls.message}>{message}</p>
         </div>
         <Icon onClick={closeHandler} type="exit" />

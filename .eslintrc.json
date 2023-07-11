@@ -12,6 +12,7 @@
     "plugin:@typescript-eslint/recommended",
     "airbnb",
     "plugin:storybook/recommended"
+    /* "plugin:perfectionist/recommended-alphabetical" */
   ],
   "parser": "@typescript-eslint/parser",
   "settings": {
@@ -31,7 +32,12 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks"],
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "react-hooks"
+    /*, "perfectionist" */
+  ],
   "rules": {
     "indent": [1, 2],
     "react/jsx-filename-extension": [
@@ -40,6 +46,7 @@
         "extensions": [".js", ".jsx", ".tsx"]
       }
     ],
+    /* "perfectionist/sort-interfaces": "error", */
     "react/button-has-type": "off",
     "react/jsx-no-bind": "off",
     "implicit-arrow-linebreak": "off",

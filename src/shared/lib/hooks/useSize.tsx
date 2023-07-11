@@ -28,13 +28,13 @@ function useSize(element: HTMLElement | null) {
         let height: number;
 
         if ('borderBoxSize' in entry) {
-          const borderSizeEntry = entry['borderBoxSize'];
+          const borderSizeEntry = entry.borderBoxSize;
           // iron out differences between browsers
           const borderSize = Array.isArray(borderSizeEntry)
             ? borderSizeEntry[0]
             : borderSizeEntry;
-          width = borderSize['inlineSize'];
-          height = borderSize['blockSize'];
+          width = borderSize.inlineSize;
+          height = borderSize.blockSize;
         } else {
           // for browsers that don't support `borderBoxSize`
           // we calculate it ourselves to get the correct border box.
@@ -48,6 +48,8 @@ function useSize(element: HTMLElement | null) {
       resizeObserver.observe(element, { box: 'border-box' });
 
       return () => resizeObserver.unobserve(element);
+
+      // eslint-disable-next-line no-else-return
     } else {
       // We only want to reset to `undefined` when the element becomes `null`,
       // not if it changes to another element.

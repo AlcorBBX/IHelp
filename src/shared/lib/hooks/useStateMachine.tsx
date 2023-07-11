@@ -2,7 +2,6 @@ import { useReducer } from 'react';
 
 type Machine<S> = { [k: string]: { [k: string]: S } };
 type MachineState<T> = keyof T;
-type MachineEvent<T> = keyof UnionToIntersection<T[keyof T]>;
 
 // 🤯 https://fettblog.eu/typescript-union-to-intersection/
 type UnionToIntersection<T> = (T extends any ? (x: T) => any : never) extends (
@@ -10,6 +9,8 @@ type UnionToIntersection<T> = (T extends any ? (x: T) => any : never) extends (
 ) => any
   ? R
   : never;
+
+type MachineEvent<T> = keyof UnionToIntersection<T[keyof T]>;
 
 export function useStateMachine<M>(
   initialState: MachineState<M>,

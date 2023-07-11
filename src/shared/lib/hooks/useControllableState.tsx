@@ -17,10 +17,29 @@ type UseControllableStateParams<T> = {
 
 type SetStateFn<T> = (prevState?: T) => T;
 
+function useUncontrolledState<T>({
+  defaultProp,
+  onChange,
+}: Omit<UseControllableStateParams<T>, 'prop'>) {
+  const uncontrolledState = useState<T | undefined>(defaultProp);
+  const [value] = uncontrolledState;
+  const prevValueRef = useRef(value);
+  const handleChange = useCallbackRef(onChange);
+
+  useEffect(() => {
+    if (prevValueRef.current !== value) {
+      handleChange(value as T);
+      prevValueRef.current = value;
+    }
+  }, [value, prevValueRef, handleChange]);
+
+  return uncontrolledState;
+}
+
 function useControllableState<T>({
   prop,
   defaultProp,
-  onChange = () => {},
+  onChange,
 }: UseControllableStateParams<T>) {
   const [uncontrolledProp, setUncontrolledProp] = useUncontrolledState({
     defaultProp,
@@ -45,25 +64,6 @@ function useControllableState<T>({
   );
 
   return [value, setValue] as const;
-}
-
-function useUncontrolledState<T>({
-  defaultProp,
-  onChange,
-}: Omit<UseControllableStateParams<T>, 'prop'>) {
-  const uncontrolledState = useState<T | undefined>(defaultProp);
-  const [value] = uncontrolledState;
-  const prevValueRef = useRef(value);
-  const handleChange = useCallbackRef(onChange);
-
-  useEffect(() => {
-    if (prevValueRef.current !== value) {
-      handleChange(value as T);
-      prevValueRef.current = value;
-    }
-  }, [value, prevValueRef, handleChange]);
-
-  return uncontrolledState;
 }
 
 export { useControllableState };

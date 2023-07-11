@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { useLayoutEffect as reactUseLayoutEffect } from 'react';
 
 /**
@@ -7,6 +8,8 @@ import { useLayoutEffect as reactUseLayoutEffect } from 'react';
  *
  * See: https://reactjs.org/docs/hooks-reference.html#uselayouteffect
  */
+
+// eslint-disable-next-line no-extra-boolean-cast
 const useLayoutEffect = Boolean(globalThis?.document)
   ? reactUseLayoutEffect
   : () => {};

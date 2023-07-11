@@ -7,3 +7,4 @@ export { useEscapeKeydown } from './useEscapeKeydown';
 export { useId } from './useId';
 export { useDirection } from './useDirection';
 export { useFocusGuards } from './useFocusGurds';
+export { useComposedRefs, composeRefs } from './useComposeRefs';

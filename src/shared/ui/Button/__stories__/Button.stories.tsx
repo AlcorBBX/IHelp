@@ -20,7 +20,7 @@ export const Default = DefaultTemplate.bind({});
 
 const ThemesTemplate: StoryFn<ButtonProps> = (args) => (
   <div>
-    <div style={{ background: 'grey', padding: '5px' }}>
+    <div style={{ background: '#121212', padding: '5px' }}>
       <Button theme="background" {...args}>
         background
       </Button>

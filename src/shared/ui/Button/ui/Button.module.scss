@@ -17,14 +17,14 @@
   // transition: ;
   border: none;
 
-  &:hover {
-    color: var(--bg-color);
-    background: var(--text-color);
-  }
-  &:active {
-    color: var(--bg-color);
-    background: var(--sub-color);
-  }
+  /* &:hover { */
+  /*   color: var(--bg-color); */
+  /*   background: var(--text-color); */
+  /* } */
+  /* &:active { */
+  /*   color: var(--bg-color); */
+  /*   background: var(--sub-color); */
+  /* } */
   /* &:focus { */
   /*   box-shadow: 0 0 0 0.15em var(--text-color); */
   /* } */
@@ -61,8 +61,17 @@
 
 .background {
   background-color: var(--bg-color);
-  color: var(--primary-color);
+  color: var(--text-color);
   border: none;
+
+  &:hover {
+    color: var(--bg-color);
+    background: var(--text-color);
+  }
+  &:active {
+    color: var(--bg-color);
+    background: var(--sub-color);
+  }
 }
 
 .clear,
@@ -82,14 +91,19 @@
   }
 }
 
-.clearInverted {
-  color: var(--inverted-primary-color);
-}
-
 .outline {
   border: 0.15em solid var(--sub-alt-color);
   color: var(--text-color);
   background: none;
+
+  &:hover {
+    color: var(--bg-color);
+    background: var(--text-color);
+  }
+  &:active {
+    color: var(--bg-color);
+    background: var(--sub-color);
+  }
 }
 
 .outlinedDanger {

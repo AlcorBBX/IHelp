@@ -38,7 +38,7 @@ export const Alert = forwardRef<HTMLDivElement, AlertProps>((props, ref) => {
           {title && <p className={cls.title}>{title}</p>}
           <p className={cls.message}>{message}</p>
         </div>
-        <Icon onClick={closeHandler} type="exit" />
+        <Icon onClick={closeHandler} type="close" />
       </div>
     </Portal>
   );

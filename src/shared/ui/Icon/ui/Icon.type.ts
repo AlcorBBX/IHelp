@@ -9,7 +9,11 @@ export type IconType =
   | 'like'
   | 'dislike'
   | 'exit'
-  | 'profile';
+  | 'profile'
+  | 'warning-circle'
+  | 'checkmark'
+  | 'question-circle'
+  | 'close';
 
 export type IconProps = {
   className?: string;
